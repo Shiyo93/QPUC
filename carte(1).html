@@ -78,6 +78,7 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 .bt svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .bt.on{background:var(--accent);color:var(--accent-fg)}
 .bt.p{background:var(--accent);color:var(--accent-fg)}
+.bt.q{box-shadow:inset 0 0 0 1.5px var(--accent);color:var(--accent)}
 .hint{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 72px);z-index:6;max-width:calc(100% - 32px);
   background:var(--fg);color:var(--bg);padding:8px 14px;border-radius:999px;font-size:13px;text-align:center}
 .ex{position:fixed;left:max(16px,env(safe-area-inset-left,0px));right:max(16px,env(safe-area-inset-right,0px));top:calc(env(safe-area-inset-top,0px) + 58px);z-index:5;
@@ -194,6 +195,7 @@ kbd{font:500 11px var(--f-mono);padding:1px 6px;border:1px solid var(--border);b
   #s-x{display:none}
 }
 @media (max-width:480px){
+  #b-in,#b-out{display:none}
   .bar .in{flex-wrap:nowrap}
   .bt{padding:0 9px;gap:5px;font-size:13px}
   .bt[aria-label]{padding:0;width:38px;justify-content:center}
@@ -205,7 +207,6 @@ kbd{font:500 11px var(--f-mono);padding:1px 6px;border:1px solid var(--border);b
 <div class="tb">
   <button class="ib mn" id="b-menu" type="button" aria-label="Dossiers et notes"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   <div class="tt">Carte des savoirs<small id="sub"></small></div>
-  <button class="ib mn" id="b-quiz" type="button" aria-label="Quiz" title="Quiz sur mes fiches (Q)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 115 0c0 1.7-2.5 2-2.5 3.5M12 17h.01"/></svg></button>
   <button class="chip" id="b-mode" type="button" title="Basculer entre vue globale et locale (G)"></button>
 </div>
 <div class="back" id="back" hidden></div>
@@ -221,6 +222,7 @@ kbd{font:500 11px var(--f-mono);padding:1px 6px;border:1px solid var(--border);b
 <div class="bar"><div class="in">
   <button class="bt p" id="b-box" type="button" title="Nouveau rectangle (N)"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Rectangle</button>
   <button class="bt" id="b-link" type="button" title="Relier deux rectangles (L)"><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/></svg>Relier</button>
+  <button class="bt q" id="b-quiz" type="button" title="Quiz sur mes fiches (Q)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 115 0c0 1.7-2.5 2-2.5 3.5M12 17h.01"/></svg>Quiz</button>
   <button class="bt" id="b-out" type="button" aria-label="Dézoomer"><svg viewBox="0 0 24 24"><path d="M5 12h14"/></svg></button>
   <button class="bt" id="b-in" type="button" aria-label="Zoomer"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
   <button class="bt" id="b-fit" type="button" aria-label="Tout voir" title="Tout voir (F)"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
