@@ -818,7 +818,7 @@ async function ghPull(){
 }
 /* ---------- quiz ---------- */
 var QZ=null,QDAYS=[0,1,3,7,21,60];
-var KINDS=[['dates','Dates'],['info','Infos'],['qui','Qui est-ce ?'],['photo','Photos'],['liste','Listes'],['liens','Liens']];
+var KINDS=[['dates','Nom → dates'],['datesinv','Dates → nom'],['info','Infos'],['qui','Qui est-ce ?'],['photo','Photos'],['liste','Listes'],['liens','Liens']];
 function quizAfterSheet(){if(QZ&&QZ.step==='play')quizRender()}
 function qScopeBoxes(scope){
   if(scope==='all')return S.boxes.slice();
@@ -834,7 +834,7 @@ function buildCards(scope,kinds){
     b.items.forEach(function(it,idx){
       if(!it.t)return;
       var add=function(k){if(kinds[k])out.push({kind:k,bid:b.id,iid:it.id,key:it.id+'|'+k})};
-      if(it.d)add('dates');
+      if(it.d){add('dates');add('datesinv')}
       if(it.s){add('info');add('qui')}
       if(it.ph)add('photo');
       if(!it.d&&!it.s&&!it.ph&&qChildren(b,idx).length)add('liste');
@@ -852,6 +852,7 @@ function cardData(c){
   var idx=-1;b.items.forEach(function(x,i){if(x.id===c.iid)idx=i});if(idx<0)return null;
   var it=b.items[idx],par=qParent(b,idx),ctx=b.t+(par?' › '+par.t:'');
   if(c.kind==='dates')return it.d?{lab:'Dates',ctx:ctx,q:it.t,a:it.d,x:it.s||''}:null;
+  if(c.kind==='datesinv')return it.d?{lab:'Dates → nom',ctx:ctx,q:it.d,a:it.t,x:it.s||''}:null;
   if(c.kind==='info')return it.s?{lab:'Infos',ctx:ctx,q:it.t,a:it.s,x:it.d||''}:null;
   if(c.kind==='qui')return it.s?{lab:'Qui est-ce ?',ctx:ctx,q:it.s+(it.d?' ('+it.d+')':''),a:it.t}:null;
   if(c.kind==='photo')return it.ph?{lab:'Qui est-ce ?',ctx:ctx,q:'',img:it,a:it.t,x:[it.d,it.s].filter(Boolean).join(' · ')}:null;
