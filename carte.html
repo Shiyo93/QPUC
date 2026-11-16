@@ -231,6 +231,12 @@ kbd{font:500 11px var(--f-mono);padding:1px 6px;border:1px solid var(--border);b
 .tlc .row{display:flex;gap:8px;margin-top:8px;align-items:center}
 .tlc .ct{color:var(--muted);font-size:12.5px;flex:1}
 .tle{padding:30px 18px;color:var(--muted);text-align:center}
+.tlt{cursor:pointer;min-width:28px}
+.tlt.on{color:var(--accent);font-weight:700;background:color-mix(in srgb,var(--accent) 14%,transparent)}
+.tlz{flex-wrap:wrap}
+.tlz .yi{width:92px;min-height:36px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--fg);padding:0 8px;font-size:14px}
+.tlc .yl{display:flex;flex-wrap:wrap;gap:6px;max-height:112px;overflow:auto}
+.tlc .yl .sb{min-height:32px;padding:0 10px;font-size:13px}
 </style>
 
 </head><body>
@@ -1178,7 +1184,7 @@ function tlRender(first){
    +S.folders.map(function(f){return '<option value="f:'+f.id+'"'+(TL.scope==='f:'+f.id?' selected':'')+'>Dossier : '+esc(f.t)+'</option>'}).join('');
   var h='<div class="tlh"><b>Frise chronologique</b><span class="sp"></span><select id="tl-sc" aria-label="Quoi afficher">'+opts+'</select>'
    +'<button class="ib" id="tl-x" type="button" aria-label="Fermer la frise"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>'
-   +'<div class="tlz"><button class="sb" id="tl-m" type="button" aria-label="Dézoomer">−</button><button class="sb" id="tl-p" type="button" aria-label="Zoomer">+</button><button class="sb" id="tl-f" type="button">Tout voir</button><span>'+its.length+' fiche'+(its.length>1?'s':'')+' datée'+(its.length>1?'s':'')+'</span></div>';
+   +'<div class="tlz"><button class="sb" id="tl-m" type="button" aria-label="Dézoomer">−</button><button class="sb" id="tl-p" type="button" aria-label="Zoomer">+</button><button class="sb" id="tl-f" type="button">Tout voir</button><input id="tl-y" class="yi" type="number" inputmode="numeric" placeholder="Année…" aria-label="Aller à une année"><button class="sb" id="tl-g" type="button">Aller</button><span class="ct">'+its.length+' fiche'+(its.length>1?'s':'')+'</span></div>';
   if(!its.length){
     el.innerHTML=h+'<div class="tle">Aucune fiche datée ici. Ajoute des dates (ex. 1491-1547) à tes fiches : elles apparaîtront automatiquement.</div>';
     bind();return;
@@ -1204,22 +1210,24 @@ function tlRender(first){
   var H=30+lanes.length*26+14;
   // graduations
   var steps=[1,2,5,10,20,25,50,100,200,250,500,1000],st=1000;
-  for(var i=0;i<steps.length;i++){if(steps[i]*k>=64){st=steps[i];break}}
+  for(var i=0;i<steps.length;i++){if(steps[i]*k>=34){st=steps[i];break}}
   var tk='',gl='';
   for(var y=Math.ceil(y0/st)*st;y<=y1+st;y+=st){
     if(y===0)continue;
     var xx=Math.round(X(y));
-    tk+='<div class="tlt" style="left:'+xx+'px">'+tlFmt(y)+'</div>';
+    tk+='<div class="tlt'+(TL.ysel===y?' on':'')+'" data-y="'+y+'" style="left:'+xx+'px">'+tlFmt(y)+'</div>';
     gl+='<div class="tlg" style="left:'+xx+'px;height:'+(H-30)+'px"></div>';
   }
   var sel=null;
   if(TL.sel)its.forEach(function(o){if(o.bid===TL.sel.bid&&o.idx===TL.sel.idx)sel=o});
   TL.sel=sel;
+  var ys=(TL.ysel!==undefined&&TL.ysel!==null&&!sel)?TL.ysel:null;
+  var rng=sel?{a:sel.a,b:sel.b}:(ys!==null?{a:ys,b:ys}:null);
   var bars='';
   its.forEach(function(it,i){
     var top=30+7+it.lane*26-4+4;
     var pt=it.w<=MIN+0.5&&it.a===it.b;
-    var dim=sel&&!(it.a<=sel.b&&it.b>=sel.a);
+    var dim=rng&&!(it.a<=rng.b&&it.b>=rng.a);
     var cls='tlb'+(pt?' pt':'')+(dim?' dim':'')+(it===sel?' sel':'');
     var inside=!pt&&it.w>=60;
     bars+='<button type="button" class="'+cls+'" data-i="'+i+'" style="left:'+Math.round(it.x)+'px;top:'+top+'px;width:'+Math.round(it.w)+'px;--cx:var(--c'+it.c+')" title="'+esc(it.t+' · '+it.d)+'">'+(inside?esc(it.t):'')+'</button>';
@@ -1228,13 +1236,17 @@ function tlRender(first){
       if(room>=34)bars+='<span class="tlk'+(dim?' dim':'')+'" style="left:'+Math.round(lx)+'px;top:'+top+'px;max-width:'+Math.floor(room)+'px">'+esc(it.t)+'</span>';
     }
   });
-  var band=sel?'<div class="tlr" style="left:'+Math.round(X(sel.a))+'px;width:'+Math.max(2,Math.round(X(sel.b)-X(sel.a)))+'px;height:'+(H-30)+'px"></div>':'';
+  var band=rng?'<div class="tlr" style="left:'+Math.round(X(rng.a))+'px;width:'+Math.max(ys!==null?Math.round(k):2,Math.round(X(rng.b)-X(rng.a)))+'px;height:'+(H-30)+'px"></div>':'';
   h+='<div class="tls" id="tl-s"><div class="tli" style="width:'+W+'px;height:'+H+'px"><div class="tlax">'+tk+'</div>'+gl+band+bars+'</div></div>';
   if(sel){
     var same=its.filter(function(o){return o!==sel&&o.a<=sel.b&&o.b>=sel.a}).length;
     h+='<div class="tlc"><div class="tt2">'+esc(sel.t)+'</div><div class="dd">'+esc(sel.d)+' · '+esc(sel.bt)+'</div>'+(sel.s?'<p>'+esc(sel.s)+'</p>':'')
      +'<div class="row"><span class="ct">'+same+' fiche'+(same>1?'s':'')+' à la même époque (en couleur)</span><button class="sb p" id="tl-o" type="button">Ouvrir la fiche</button></div></div>';
-  }else h+='<div class="tlc"><div class="ct" style="color:var(--muted);font-size:13px">Touche une fiche pour voir ce qui se passait à la même époque.</div></div>';
+  }else if(ys!==null){
+    var yl=its.map(function(o,i){return {o:o,i:i}}).filter(function(z){return z.o.a<=ys&&z.o.b>=ys});
+    h+='<div class="tlc"><div class="tt2">Année '+tlFmt(ys)+'</div><div class="ct" style="margin:2px 0 4px">'+(yl.length?yl.length+' fiche'+(yl.length>1?'s':'')+' à cette date (touche-en une) :':'Aucune fiche pour cette année.')+'</div><div class="yl">'
+     +yl.slice(0,24).map(function(z){return '<button class="sb" type="button" data-k="'+z.i+'">'+esc(z.o.t)+'</button>'}).join('')+(yl.length>24?'<span class="ct">…</span>':'')+'</div></div>';
+  }else h+='<div class="tlc"><div class="ct" style="color:var(--muted);font-size:13px">Touche une fiche, ou une année dans la règle du haut, pour voir ce qui se passait à la même époque.</div></div>';
   el.innerHTML=h;
   bind();
   var s2=$('tl-s');
@@ -1250,19 +1262,25 @@ function tlRender(first){
     var s=$('tl-s');
     $('tl-p').onclick=function(){tlZoom(1.6)};
     $('tl-m').onclick=function(){tlZoom(1/1.6)};
-    $('tl-f').onclick=function(){TL.k=null;TL.sx=0;tlRender(true)};
+    $('tl-f').onclick=function(){TL.k=null;TL.sx=0;TL.ysel=null;tlRender(true)};
+    var yi=$('tl-y'),go=function(){var v=parseInt(yi.value,10);if(isNaN(v))return;tlYear(v,true)};
+    $('tl-g').onclick=go;yi.onkeydown=function(e){if(e.key==='Enter'){e.preventDefault();go()}e.stopPropagation()};
+    var yl=document.querySelector('.tlc .yl');
+    if(yl)yl.onclick=function(e){var b=e.target.closest('button[data-k]');if(!b)return;TL.ysel=null;TL.sel=TL.its[+b.dataset.k];tlRender()};
     if(!s)return;
     s.addEventListener('scroll',function(){TL.sx=s.scrollLeft;TL.sy=s.scrollTop});
     s.onclick=function(e){
+      var t=e.target.closest('.tlt');
+      if(t){tlYear(+t.dataset.y,false);return}
       var b=e.target.closest('.tlb');
-      if(!b){TL.sel=null;tlRender();return}
-      var it=TL.its[+b.dataset.i];TL.sel=(TL.sel&&TL.sel.bid===it.bid&&TL.sel.idx===it.idx)?null:it;tlRender();
+      if(!b){TL.sel=null;TL.ysel=null;tlRender();return}
+      var it=TL.its[+b.dataset.i];TL.ysel=null;TL.sel=(TL.sel&&TL.sel.bid===it.bid&&TL.sel.idx===it.idx)?null:it;tlRender();
     };
     s.addEventListener('wheel',function(e){if(e.ctrlKey||e.metaKey){e.preventDefault();tlZoom(e.deltaY<0?1.25:0.8)}},{passive:false});
     var d0=0,k0=0,pc=null;
     s.addEventListener('touchstart',function(e){if(e.touches.length===2){d0=tlDist(e);k0=TL.k;pc=tlCenter()}},{passive:true});
     s.addEventListener('touchmove',function(e){
-      if(e.touches.length===2&&d0){e.preventDefault();TL.k=Math.min(60,Math.max(0.01,k0*tlDist(e)/d0));TL.keepY=pc===null?undefined:pc;
+      if(e.touches.length===2&&d0){e.preventDefault();TL.k=Math.min(150,Math.max(0.01,k0*tlDist(e)/d0));TL.keepY=pc===null?undefined:pc;
         if(!TL.raf)TL.raf=requestAnimationFrame(function(){TL.raf=0;tlRender()})}
     },{passive:false});
     s.addEventListener('touchend',function(e){if(e.touches.length<2)d0=0},{passive:true});
@@ -1272,7 +1290,15 @@ function tlRender(first){
 }
 function tlDist(e){var a=e.touches[0],b=e.touches[1];return Math.hypot(a.clientX-b.clientX,a.clientY-b.clientY)||1}
 function tlCenter(){var sc=$('tl-s');return sc?(sc.scrollLeft+sc.clientWidth/2-30)/TL.k+TL.y0:null}
-function tlZoom(f){var c=tlCenter();TL.k=Math.min(60,Math.max(0.01,TL.k*f));TL.keepY=c===null?undefined:c;tlRender()}
+function tlZoom(f){var c=tlCenter();TL.k=Math.min(150,Math.max(0.01,TL.k*f));TL.keepY=c===null?undefined:c;tlRender()}
+function tlYear(y,jump){
+  if(!TL||!TL.its||!TL.its.length)return;
+  y=Math.max(TL.y0,Math.min(TL.y1,y));
+  var w=($('tl-s')&&$('tl-s').clientWidth)||window.innerWidth,minK=Math.max(40,w/18);
+  TL.sel=null;TL.ysel=y;
+  if(TL.k<minK||jump){TL.k=Math.max(TL.k<minK?minK:TL.k,jump?w/14:minK);TL.keepY=y}
+  tlRender();
+}
 function tlAfterSheet(){if(TL)tlRender()}
 
 /* ---------- démarrage ---------- */
