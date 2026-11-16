@@ -1150,7 +1150,7 @@ function tlParse(d){
   if(!d)return null;
   var s=String(d).toLowerCase();
   var neg=/av\.?\s*j/.test(s);
-  s=s.replace(new RegExp('((\\d{1,2}|1er)\\s*(au|et|-|–)\\s*)?(\\d{1,2}|1er)\\s+('+MOIS+')','g'),' ');
+  s=s.replace(new RegExp('(^|\\D)(((\\d{1,2}|1er)\\s*(au|et|-|–)\\s*)?(\\d{1,2}|1er)\\s+('+MOIS+'))','g'),'$1 ');
   var m=s.match(/\d{1,4}/g);if(!m)return null;
   var y=m.map(Number).filter(function(n){return n>0&&n<=2200});if(!y.length)return null;
   if(y.length>1&&y[y.length-1]<100&&y[0]>=100)y[y.length-1]=y[0]-y[0]%100+y[y.length-1];
