@@ -250,5 +250,14 @@
   "note": "Infos sur Jules, sur Footix et sur la finale France 98",
   "frise": true,
   "etat": "a_traiter"
+ },
+ {
+  "id": "mwo146oe",
+  "at": "2026-11-19T20:55:07.982Z",
+  "q": "Quel est le gérondif présent du verbe \"coudre\" ?",
+  "a": "En cousant",
+  "note": "Carte sur le gérondif",
+  "frise": false,
+  "etat": "a_traiter"
  }
 ]
