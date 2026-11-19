@@ -169,5 +169,14 @@
   "note": "Dates liées à Dijon, monuments et édifices,  gens nés à Dijon célèbres et évènements liés",
   "frise": true,
   "etat": "a_traiter"
+ },
+ {
+  "id": "mwnzu9mo",
+  "at": "2026-11-19T20:19:25.632Z",
+  "q": "Dans quel État américain se trouve l'université de Princeton ?",
+  "a": "New Jersey",
+  "note": "Infos à connaitre sur cet Etat",
+  "frise": true,
+  "etat": "a_traiter"
  }
 ]
