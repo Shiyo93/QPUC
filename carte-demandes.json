@@ -43,5 +43,14 @@
   "note": "Cause de sa mort",
   "frise": true,
   "etat": "a_traiter"
+ },
+ {
+  "id": "mwnshcv7",
+  "at": "2026-11-19T16:53:25.987Z",
+  "q": "Quel dramaturge français, décédé en 1987, a écrit : \"Le Voyageur sans bagage\" et \"Antigone\" ?",
+  "a": "Jean Anouilh",
+  "note": "",
+  "frise": true,
+  "etat": "a_traiter"
  }
 ]
