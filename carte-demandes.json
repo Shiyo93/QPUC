@@ -97,5 +97,14 @@
   "note": "Date du livre et dates de l'auteur en plusieurs  repères",
   "frise": true,
   "etat": "a_traiter"
+ },
+ {
+  "id": "mwnzd9v3",
+  "at": "2026-11-19T20:06:12.783Z",
+  "q": "Combien y a-t-il de joueurs sur le terrain lors d'un match de football ?",
+  "a": "22",
+  "note": "",
+  "frise": true,
+  "etat": "a_traiter"
  }
 ]
