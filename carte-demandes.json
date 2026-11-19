@@ -79,5 +79,14 @@
   "note": "",
   "frise": true,
   "etat": "a_traiter"
+ },
+ {
+  "id": "mwnzbswy",
+  "at": "2026-11-19T20:05:04.162Z",
+  "q": "Comment s'appellent les habitants de la Franche-Comté ?",
+  "a": "Les Francs-Comtois",
+  "note": "Demander les départements et la capitale",
+  "frise": false,
+  "etat": "a_traiter"
  }
 ]
