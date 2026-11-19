@@ -259,5 +259,14 @@
   "note": "Carte sur le gérondif",
   "frise": false,
   "etat": "a_traiter"
+ },
+ {
+  "id": "mwo174jk",
+  "at": "2026-11-19T20:57:25.184Z",
+  "q": "Quelle créature fabuleuse avait une tête de lion et un corps de chèvre ?",
+  "a": "La chimère",
+  "note": "Infos sur la chimere",
+  "frise": false,
+  "etat": "a_traiter"
  }
 ]
