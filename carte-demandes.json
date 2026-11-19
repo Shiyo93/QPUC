@@ -214,5 +214,14 @@
   "note": "Infos sur le soleil",
   "frise": false,
   "etat": "a_traiter"
+ },
+ {
+  "id": "mwo0pmf9",
+  "at": "2026-11-19T20:43:48.549Z",
+  "q": "Quel grand acteur américain, né en 1899, était surnommé : \"Bogie\" ?",
+  "a": "Humphrey Bogart ou Humphrey DeForest Bogart",
+  "note": "Infos habituelles et films importants de sa carrière",
+  "frise": true,
+  "etat": "a_traiter"
  }
 ]
