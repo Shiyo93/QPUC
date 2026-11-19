@@ -88,5 +88,14 @@
   "note": "Demander les départements et la capitale",
   "frise": false,
   "etat": "a_traiter"
+ },
+ {
+  "id": "mwnzcp7s",
+  "at": "2026-11-19T20:05:46.024Z",
+  "q": "Comment se nomme la baleine blanche qui a donné son nom au célèbre roman d'Herman Melville ?",
+  "a": "Moby Dick",
+  "note": "Date du livre et dates de l'auteur en plusieurs  repères",
+  "frise": true,
+  "etat": "a_traiter"
  }
 ]
