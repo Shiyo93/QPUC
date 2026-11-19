@@ -106,5 +106,14 @@
   "note": "",
   "frise": true,
   "etat": "a_traiter"
+ },
+ {
+  "id": "mwnzdqxy",
+  "at": "2026-11-19T20:06:34.918Z",
+  "q": "Combien y a-t-il de joueurs sur le terrain lors d'un match de football ?",
+  "a": "22",
+  "note": "Date création sport et ou contexte",
+  "frise": true,
+  "etat": "a_traiter"
  }
 ]
