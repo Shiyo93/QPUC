@@ -151,5 +151,14 @@
   "note": "Créateurs, acteurs principaux,  nombre saisons et date diffusion",
   "frise": true,
   "etat": "a_traiter"
+ },
+ {
+  "id": "mwnzpl5p",
+  "at": "2026-11-19T20:15:47.293Z",
+  "q": "Quelle ville de la Côte-d'Or abrite l'hôtel de Vogüé et l'ancien palais des ducs de Bourgogne ?",
+  "a": "Dijon",
+  "note": "",
+  "frise": true,
+  "etat": "a_traiter"
  }
 ]
