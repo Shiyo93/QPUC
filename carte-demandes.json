@@ -196,5 +196,14 @@
   "note": "Infos sur la Flandre",
   "frise": true,
   "etat": "a_traiter"
+ },
+ {
+  "id": "mwo08c3f",
+  "at": "2026-11-19T20:30:22.011Z",
+  "q": "Quel animal est l'anaconda ?",
+  "a": "Un serpent",
+  "note": "Famille, aire géographique,  autre nom si il y en a",
+  "frise": false,
+  "etat": "a_traiter"
  }
 ]
