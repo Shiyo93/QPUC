@@ -52,5 +52,14 @@
   "note": "",
   "frise": true,
   "etat": "a_traiter"
+ },
+ {
+  "id": "mwnsjgdy",
+  "at": "2026-11-19T16:55:03.862Z",
+  "q": "Dans les aventures de Tintin, quel nom de fleur porte le professeur prénommé Tryphon ?",
+  "a": "Tournesol",
+  "note": "",
+  "frise": false,
+  "etat": "a_traiter"
  }
 ]
