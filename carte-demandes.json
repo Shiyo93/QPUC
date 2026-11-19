@@ -124,5 +124,14 @@
   "note": "Capitale et iles qui composent et localisation et date découverte",
   "frise": true,
   "etat": "a_traiter"
+ },
+ {
+  "id": "mwnziair",
+  "at": "2026-11-19T20:10:06.915Z",
+  "q": "En 2010, quel réalisateur a présidé le jury du festival de Cannes, succédant ainsi à Isabelle Huppert ?",
+  "a": "Tim Burton",
+  "note": "Fiche Tim Burton et Isabelle Huppert",
+  "frise": true,
+  "etat": "a_traiter"
  }
 ]
