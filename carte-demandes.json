@@ -142,5 +142,14 @@
   "note": "",
   "frise": true,
   "etat": "a_traiter"
+ },
+ {
+  "id": "mwnzjgzz",
+  "at": "2026-11-19T20:11:01.967Z",
+  "q": "Pour quelle série télévisée, \"La vérité\" est-elle \"ailleurs\" ?",
+  "a": "X-Files",
+  "note": "Créateurs, acteurs principaux,  nombre saisons et date diffusion",
+  "frise": true,
+  "etat": "a_traiter"
  }
 ]
