@@ -70,5 +70,14 @@
   "note": "Préciser famille pour les plantes",
   "frise": false,
   "etat": "a_traiter"
+ },
+ {
+  "id": "mwnspuxv",
+  "at": "2026-11-19T17:00:02.659Z",
+  "q": "Qui réalise \"Chat noir, chat blanc\" en 1998 ?",
+  "a": "Emir Kusturica",
+  "note": "",
+  "frise": true,
+  "etat": "a_traiter"
  }
 ]
