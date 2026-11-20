@@ -6,7 +6,7 @@
   "a": "Michel Poniatowski",
   "note": "",
   "frise": true,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwnrxjw0",
@@ -15,7 +15,7 @@
   "a": "Vincent Delerm",
   "note": "",
   "frise": true,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwnryp8r",
@@ -24,7 +24,7 @@
   "a": "Son ramage",
   "note": "",
   "frise": true,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwnsd20b",
@@ -33,7 +33,7 @@
   "a": "Jean Vigo",
   "note": "",
   "frise": true,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwnsdc0s",
@@ -42,7 +42,7 @@
   "a": "Jean Vigo",
   "note": "Cause de sa mort",
   "frise": true,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwnshcv7",
@@ -51,7 +51,7 @@
   "a": "Jean Anouilh",
   "note": "",
   "frise": true,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwnsjgdy",
@@ -60,7 +60,7 @@
   "a": "Tournesol",
   "note": "",
   "frise": false,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwnsjyjm",
@@ -69,7 +69,7 @@
   "a": "Tournesol",
   "note": "Préciser famille pour les plantes",
   "frise": false,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwnspuxv",
@@ -78,7 +78,7 @@
   "a": "Emir Kusturica",
   "note": "",
   "frise": true,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwnzbswy",
@@ -87,7 +87,7 @@
   "a": "Les Francs-Comtois",
   "note": "Demander les départements et la capitale",
   "frise": false,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwnzcp7s",
@@ -96,7 +96,7 @@
   "a": "Moby Dick",
   "note": "Date du livre et dates de l'auteur en plusieurs  repères",
   "frise": true,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwnzd9v3",
@@ -105,7 +105,7 @@
   "a": "22",
   "note": "",
   "frise": true,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwnzdqxy",
@@ -114,7 +114,7 @@
   "a": "22",
   "note": "Date création sport et ou contexte",
   "frise": true,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwnzfsez",
@@ -123,7 +123,7 @@
   "a": "Du Portugal",
   "note": "Capitale et iles qui composent et localisation et date découverte",
   "frise": true,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwnziair",
@@ -132,7 +132,7 @@
   "a": "Tim Burton",
   "note": "Fiche Tim Burton et Isabelle Huppert",
   "frise": true,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwnzik6a",
@@ -141,7 +141,7 @@
   "a": "X-Files",
   "note": "",
   "frise": true,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwnzjgzz",
@@ -150,7 +150,7 @@
   "a": "X-Files",
   "note": "Créateurs, acteurs principaux,  nombre saisons et date diffusion",
   "frise": true,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwnzpl5p",
@@ -159,7 +159,7 @@
   "a": "Dijon",
   "note": "",
   "frise": true,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwnzqo2r",
@@ -168,7 +168,7 @@
   "a": "Dijon",
   "note": "Dates liées à Dijon, monuments et édifices,  gens nés à Dijon célèbres et évènements liés",
   "frise": true,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwnzu9mo",
@@ -177,7 +177,7 @@
   "a": "New Jersey",
   "note": "Infos à connaitre sur cet Etat",
   "frise": true,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwnzwvg4",
@@ -186,7 +186,7 @@
   "a": "La bête",
   "note": "Emile Zola infos",
   "frise": true,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwnzy0ul",
@@ -195,7 +195,7 @@
   "a": "Les Flamands",
   "note": "Infos sur la Flandre",
   "frise": true,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwo08c3f",
@@ -204,7 +204,7 @@
   "a": "Un serpent",
   "note": "Famille, aire géographique,  autre nom si il y en a",
   "frise": false,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwo0fcrs",
@@ -213,7 +213,7 @@
   "a": "Le Soleil",
   "note": "Infos sur le soleil",
   "frise": false,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwo0pmf9",
@@ -222,7 +222,7 @@
   "a": "Humphrey Bogart ou Humphrey DeForest Bogart",
   "note": "Infos habituelles et films importants de sa carrière",
   "frise": true,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwo0vli4",
@@ -231,7 +231,7 @@
   "a": "Les États-Unis",
   "note": "",
   "frise": true,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwo0w7z0",
@@ -240,7 +240,7 @@
   "a": "Les États-Unis",
   "note": "Infos classiques et chansons à connaître",
   "frise": true,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwo0zvuq",
@@ -249,7 +249,7 @@
   "a": "Jules",
   "note": "Infos sur Jules, sur Footix et sur la finale France 98",
   "frise": true,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwo146oe",
@@ -258,7 +258,7 @@
   "a": "En cousant",
   "note": "Carte sur le gérondif",
   "frise": false,
-  "etat": "a_traiter"
+  "etat": "traite"
  },
  {
   "id": "mwo174jk",
@@ -267,6 +267,6 @@
   "a": "La chimère",
   "note": "Infos sur la chimere",
   "frise": false,
-  "etat": "a_traiter"
+  "etat": "traite"
  }
 ]
