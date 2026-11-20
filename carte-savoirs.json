@@ -12596,9 +12596,84 @@
      "ref": ""
     }
    ]
+  },
+  {
+   "id": "dm_jeunes",
+   "t": "Arrivés au pouvoir jeunes",
+   "c": 3,
+   "f": "hist",
+   "x": 0,
+   "y": 18900,
+   "fold": false,
+   "items": [
+    {
+     "id": "09txduk",
+     "t": "Dirigeants arrivés au pouvoir avant 40 ans",
+     "d": "",
+     "s": "Question type (12 coups de midi, replay du 24 novembre 2023) : « Qui est arrivé au pouvoir avant ses 40 ans ? » avec pour choix Michelle Bachelet, Alexandre le Grand, Louis XIV, Emmanuel Macron, Kim Jong-un, Napoléon Ier et Puyi. Seule Michelle Bachelet y est arrivée après 40 ans (à 54 ans) ; tous les autres sont arrivés au pouvoir avant 40 ans. Âges à l’arrivée au pouvoir : Puyi 2 ans, Louis XIV 4 ans, Alexandre le Grand 20 ans, Kim Jong-un vers 27-28 ans, Napoléon 30 ans, Emmanuel Macron 39 ans.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "n8f0jbx",
+     "t": "Puyi : empereur de Chine (à 2 ans)",
+     "d": "1908",
+     "s": "Puyi (1906-1967), dernier empereur de Chine (dynastie Qing), nationalité chinoise. Né le 7 février 1906 à Pékin, mort le 17 octobre 1967 à Pékin. Monte sur le trône en novembre 1908 sous le nom de règne Xuantong, à 2 ans ; abdique en février 1912 après la révolution Xinhai. Restauré brièvement en 1917, puis empereur du Mandchoukouo, État fantoche du Japon (1934-1945). Sa vie inspire le film Le Dernier Empereur de Bernardo Bertolucci (1987, neuf Oscars).",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "1iufs94",
+     "t": "Louis XIV : roi de France (à 4 ans)",
+     "d": "1643",
+     "s": "Louis XIV (1638-1715), français. Né le 5 septembre 1638 à Saint-Germain-en-Laye, mort le 1er septembre 1715 à Versailles. Roi à la mort de son père Louis XIII (14 mai 1643), à presque 5 ans (4 ans et 8 mois). Régence d’Anne d’Autriche avec Mazarin ; il prend le pouvoir personnel à la mort de Mazarin, en 1661, à 22 ans. Règne de 72 ans, le plus long de l’histoire de France.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "3m2yq3e",
+     "t": "Alexandre le Grand : roi de Macédoine (à 20 ans)",
+     "d": "336 av. J.-C.",
+     "s": "Alexandre le Grand (356-323 av. J.-C.), macédonien. Né en 356 av. J.-C. à Pella, mort en 323 av. J.-C. à Babylone. Devient roi de Macédoine en 336 av. J.-C., à 20 ans, après l’assassinat de son père Philippe II. Conquiert l’empire perse et meurt à 32 ans.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "6syfg1k",
+     "t": "Kim Jong-un : dirigeant suprême de la Corée du Nord (à 27-28 ans)",
+     "d": "2011",
+     "s": "Kim Jong-un, nord-coréen, né à Pyongyang en janvier 1982, 1983 ou 1984 selon les sources (la date exacte est incertaine). Succède à son père Kim Jong-il, mort le 17 décembre 2011, et devient « dirigeant suprême » de la Corée du Nord, vers 27-28 ans.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "cazayfu",
+     "t": "Napoléon Bonaparte : Premier consul (à 30 ans)",
+     "d": "1799",
+     "s": "Napoléon Ier (1769-1821), français. Né le 15 août 1769 à Ajaccio, mort le 5 mai 1821 à Sainte-Hélène. Prend le pouvoir par le coup d’État du 18 brumaire an VIII (9 novembre 1799), à 30 ans, et devient Premier consul ; empereur des Français en 1804, à 35 ans.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "h859xwm",
+     "t": "Emmanuel Macron : président de la République (à 39 ans)",
+     "d": "2017",
+     "s": "Emmanuel Macron, français, né le 21 décembre 1977 à Amiens. Élu président de la République le 7 mai 2017 (investi le 14 mai), à 39 ans, le plus jeune président de l’histoire de la République française, et le plus jeune chef d’État français depuis Napoléon. Réélu en 2022.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "w6p74vk",
+     "t": "Michelle Bachelet : présidente du Chili (à 54 ans)",
+     "d": "2006",
+     "s": "Michelle Bachelet, chilienne, née le 29 septembre 1951 à Santiago. Première femme présidente du Chili : 2006-2010, puis 2014-2018. Prend ses fonctions le 11 mars 2006, à 54 ans, donc après 40 ans. Haut-commissaire des Nations unies aux droits de l’homme (2018-2022). Le « mauvais choix » parmi ces sept noms.",
+     "lv": 1,
+     "ref": ""
+    }
+   ]
   }
  ],
- "at": 1795192285137,
+ "at": 1795218810433,
  "quiz": {
   "df0ner1|datesinv": {
    "l": 0,
