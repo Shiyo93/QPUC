@@ -6492,6 +6492,14 @@
      "ref": ""
     },
     {
+     "id": "670dg5b",
+     "t": "Le Lièvre (Albrecht Dürer)",
+     "d": "1502",
+     "s": "Tableau célèbre de Albrecht Dürer, en 1502.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
      "id": "jpb9do1",
      "t": "Michel-Ange (1475-1564)",
      "d": "1475-1564",
@@ -6564,6 +6572,14 @@
      "ref": ""
     },
     {
+     "id": "oh7ekbv",
+     "t": "La Famille de Charles IV (Francisco de Goya)",
+     "d": "1800",
+     "s": "Tableau célèbre de Francisco de Goya, en 1800.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
      "id": "iqe5f14",
      "t": "Élisabeth Vigée Le Brun (1755-1842)",
      "d": "1755-1842",
@@ -6584,6 +6600,14 @@
      "t": "Un bar aux Folies-Bergère (Édouard Manet)",
      "d": "1882",
      "s": "Tableau célèbre de Édouard Manet, vers 1882.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "r072n73",
+     "t": "Un bar aux Folies-Bergère (Édouard Manet)",
+     "d": "1882",
+     "s": "Tableau célèbre de Édouard Manet, en 1882.",
      "lv": 1,
      "ref": ""
     },
@@ -6633,6 +6657,14 @@
      "d": "1853-1890",
      "s": "Nationalité : néerlandais. Peintre postimpressionniste, mort à 37 ans. Œuvres : La Nuit étoilée, Les Tournesols, Les Mangeurs de pommes de terre. Un seul tableau vendu de son vivant selon la tradition. Naissance : 30 mars 1853, Groot-Zundert. Mort : 29 juillet 1890, Auvers-sur-Oise.",
      "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "la4gr3c",
+     "t": "La Nuit étoilée (Vincent van Gogh)",
+     "d": "1889",
+     "s": "Tableau célèbre de Vincent van Gogh, en 1889.",
+     "lv": 1,
      "ref": ""
     },
     {
@@ -7179,6 +7211,14 @@
      "t": "Au Moulin-Rouge (Henri de Toulouse-Lautrec)",
      "d": "1895",
      "s": "Œuvre ou date clé de Henri de Toulouse-Lautrec, en 1895.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "lzve9b0",
+     "t": "Au Moulin-Rouge (Henri de Toulouse-Lautrec)",
+     "d": "1895",
+     "s": "Tableau célèbre de Henri de Toulouse-Lautrec, en 1895.",
      "lv": 1,
      "ref": ""
     },
@@ -10934,9 +10974,1631 @@
      "ref": ""
     }
    ]
+  },
+  {
+   "id": "cel_art3",
+   "t": "Peintres, sculpteurs et architectes (3/3)",
+   "c": 4,
+   "f": "cel_art",
+   "x": 720,
+   "y": 5200,
+   "fold": false,
+   "items": [
+    {
+     "id": "x4me5yh",
+     "t": "Ivan Aïvazovski (1817-1900)",
+     "d": "1817-1900",
+     "s": "Nationalité : russe (d’origine arménienne). Le plus célèbre peintre de marines russe, officier de l’Amirauté. Œuvres : La Neuvième Vague, La Vague. Naissance : 29 juillet 1817, Théodosie (Crimée). Mort : 2 mai 1900, Théodosie.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "57z5mz1",
+     "t": "La Neuvième Vague (Ivan Aïvazovski)",
+     "d": "1850",
+     "s": "Œuvre ou date clé de Ivan Aïvazovski, en 1850.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "9zzy422",
+     "t": "Sofonisba Anguissola (v. 1532-1625)",
+     "d": "v. 1532-1625",
+     "s": "Nationalité : italienne. Portraitiste de la Renaissance, une des premières femmes peintres reconnues en Europe, peintre à la cour de Philippe II d’Espagne. Œuvres : Portrait de la famille, La Partie d’échecs. Naissance : v. 1532, Crémone. Mort : 16 novembre 1625, Palerme.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "ndx5bs4",
+     "t": "La Partie d’échecs (Sofonisba Anguissola)",
+     "d": "1555",
+     "s": "Œuvre ou date clé de Sofonisba Anguissola, en 1555.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "hl87zon",
+     "t": "Portrait de la famille (Sofonisba Anguissola)",
+     "d": "v. 1558",
+     "s": "Œuvre ou date clé de Sofonisba Anguissola, en v. 1558.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "pcw3r0b",
+     "t": "Giuseppe Arcimboldo (1526-1593)",
+     "d": "1526-1593",
+     "s": "Nationalité : italien. Peintre maniériste, célèbre pour ses portraits composés de fruits, de légumes, de fleurs ou d’objets. Peintre des empereurs Maximilien II et Rodolphe II. Œuvres : Vertumne (portrait de Rodolphe II), Les Quatre Saisons. Naissance : 1526, Milan. Mort : 11 juillet 1593, Milan.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "xdxjns2",
+     "t": "Vertumne (Giuseppe Arcimboldo)",
+     "d": "1591",
+     "s": "Œuvre ou date clé de Giuseppe Arcimboldo, en 1591.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "kdc52m3",
+     "t": "Les Quatre Saisons (Giuseppe Arcimboldo)",
+     "d": "1573",
+     "s": "Œuvre ou date clé de Giuseppe Arcimboldo, en 1573.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "c8nnaxz",
+     "t": "Gian Lorenzo Bernini (Le Bernin) (1598-1680)",
+     "d": "1598-1680",
+     "s": "Nationalité : italien. Sculpteur, architecte et peintre, maître du baroque romain. Œuvres : L’Extase de sainte Thérèse, Apollon et Daphné, le baldaquin et la colonnade de la place Saint-Pierre à Rome. Naissance : 7 décembre 1598, Naples. Mort : 28 novembre 1680, Rome.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "e7ccjxq",
+     "t": "Apollon et Daphné (Gian Lorenzo Bernini (Le Bernin))",
+     "d": "1625",
+     "s": "Œuvre ou date clé de Gian Lorenzo Bernini (Le Bernin), en 1625.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "9pw8ww1",
+     "t": "L’Extase de sainte Thérèse (Gian Lorenzo Bernini (Le Bernin))",
+     "d": "1652",
+     "s": "Œuvre ou date clé de Gian Lorenzo Bernini (Le Bernin), en 1652.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "ysfz9ux",
+     "t": "Jérôme Bosch (v. 1450-1516)",
+     "d": "v. 1450-1516",
+     "s": "Nationalité : néerlandais (brabançon). Peintre du gothique tardif, célèbre pour son imaginaire fantastique et ses monstres. Œuvres : Le Jardin des délices, La Nef des fous, Saint Jérôme en prière. Naissance : v. 1450, Bois-le-Duc (’s-Hertogenbosch). Mort : août 1516, Bois-le-Duc.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "g3o04t6",
+     "t": "Le Jardin des délices (Jérôme Bosch)",
+     "d": "v. 1500",
+     "s": "Œuvre ou date clé de Jérôme Bosch, en v. 1500.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "j959zv9",
+     "t": "Saint Jérôme en prière (Jérôme Bosch)",
+     "d": "v. 1495",
+     "s": "Œuvre ou date clé de Jérôme Bosch, en v. 1495.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "i79dgqi",
+     "t": "Sandro Botticelli (1445-1510)",
+     "d": "1445-1510",
+     "s": "Nationalité : italien (Florence). Peintre de la Renaissance florentine, protégé des Médicis. Œuvres : Le Printemps (La Primavera), La Naissance de Vénus. Naissance : 1er mars 1445, Florence. Mort : 17 mai 1510, Florence.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "rzn2ef1",
+     "t": "Le Printemps (Sandro Botticelli)",
+     "d": "v. 1480",
+     "s": "Œuvre ou date clé de Sandro Botticelli, en v. 1480.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "esf02tu",
+     "t": "La Naissance de Vénus (Sandro Botticelli)",
+     "d": "v. 1485",
+     "s": "Œuvre ou date clé de Sandro Botticelli, en v. 1485.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "674dz6e",
+     "t": "Pieter Brueghel l’Ancien (v. 1525-1569)",
+     "d": "v. 1525-1569",
+     "s": "Nationalité : flamand. Peintre des paysages et des scènes paysannes (orthographe « Bruegel » également). Père de Pieter Brueghel le Jeune et de Jan Brueghel de Velours. Œuvres : Chasseurs dans la neige, La Tour de Babel, Les Proverbes flamands. Naissance : v. 1525-1530, Brabant (lieu incertain). Mort : 9 septembre 1569, Bruxelles.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "simap7z",
+     "t": "Chasseurs dans la neige (Pieter Brueghel l’Ancien)",
+     "d": "1565",
+     "s": "Œuvre ou date clé de Pieter Brueghel l’Ancien, en 1565.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "dqtwqu8",
+     "t": "La Tour de Babel (Pieter Brueghel l’Ancien)",
+     "d": "1563",
+     "s": "Œuvre ou date clé de Pieter Brueghel l’Ancien, en 1563.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "j8glxlb",
+     "t": "Gustave Caillebotte (1848-1894)",
+     "d": "1848-1894",
+     "s": "Nationalité : français. Peintre impressionniste et mécène de ses amis impressionnistes. Œuvres : Rue de Paris, temps de pluie, Les Raboteurs de parquet. Naissance : 19 août 1848, Paris. Mort : 21 février 1894, Gennevilliers.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "iq5ztn0",
+     "t": "Les Raboteurs de parquet (Gustave Caillebotte)",
+     "d": "1875",
+     "s": "Œuvre ou date clé de Gustave Caillebotte, en 1875.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "ljh5qfp",
+     "t": "Rue de Paris, temps de pluie (Gustave Caillebotte)",
+     "d": "1877",
+     "s": "Œuvre ou date clé de Gustave Caillebotte, en 1877.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "ig9xt42",
+     "t": "Le Caravage (1571-1610)",
+     "d": "1571-1610",
+     "s": "Nationalité : italien. De son vrai nom Michelangelo Merisi. Peintre baroque, maître du clair-obscur, à la vie violente (meurtre en 1606, fuite de Rome). Œuvres : La Vocation de saint Matthieu, Garçon avec un panier de fruits, La Mort de la Vierge. Naissance : 29 septembre 1571, Milan. Mort : 18 juillet 1610, Porto Ercole.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "etvqot2",
+     "t": "Garçon avec un panier de fruits (Le Caravage)",
+     "d": "1593",
+     "s": "Œuvre ou date clé de Le Caravage, en 1593.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "o0peaqc",
+     "t": "La Vocation de saint Matthieu (Le Caravage)",
+     "d": "1600",
+     "s": "Œuvre ou date clé de Le Caravage, en 1600.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "dex6beg",
+     "t": "La Mort de la Vierge (Le Caravage)",
+     "d": "1606",
+     "s": "Œuvre ou date clé de Le Caravage, en 1606.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "3798k3t",
+     "t": "Mary Cassatt (1844-1926)",
+     "d": "1844-1926",
+     "s": "Nationalité : américaine. Peintre impressionniste américaine installée à Paris, proche de Degas, spécialiste des scènes de mère et enfant. Œuvres : Le Bain de l’enfant, La Loge. Naissance : 22 mai 1844, Allegheny City (Pittsburgh). Mort : 14 juin 1926, Le Mesnil-Théribus (Oise).",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "btw7cy9",
+     "t": "Le Bain de l’enfant (Mary Cassatt)",
+     "d": "1893",
+     "s": "Œuvre ou date clé de Mary Cassatt, en 1893.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "wp8ljl1",
+     "t": "Paul Cézanne (1839-1906)",
+     "d": "1839-1906",
+     "s": "Nationalité : français. Peintre post-impressionniste, précurseur du cubisme (« père de l’art moderne »). Œuvres : La Montagne Sainte-Victoire, Les Joueurs de cartes, Les Grandes Baigneuses. Naissance : 19 janvier 1839, Aix-en-Provence. Mort : 22 octobre 1906, Aix-en-Provence.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "ttw7a68",
+     "t": "La Montagne Sainte-Victoire vue de Bellevue (Paul Cézanne)",
+     "d": "v. 1885",
+     "s": "Œuvre ou date clé de Paul Cézanne, en v. 1885.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "f4qo3ho",
+     "t": "Les Joueurs de cartes (Paul Cézanne)",
+     "d": "1892",
+     "s": "Œuvre ou date clé de Paul Cézanne, en 1892.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "6vunv0a",
+     "t": "Marc Chagall (1887-1985)",
+     "d": "1887-1985",
+     "s": "Nationalité : russe puis français. Peintre de l’univers onirique et du folklore juif, auteur du plafond de l’Opéra Garnier (1964) et de vitraux. Œuvres : Moi et le village, La Mariée, Les Mariés de la tour Eiffel. Naissance : 6 juillet 1887, Liozna (près de Vitebsk, Biélorussie). Mort : 28 mars 1985, Saint-Paul-de-Vence.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "gmbbvyy",
+     "t": "Moi et le village (Marc Chagall)",
+     "d": "1911",
+     "s": "Œuvre ou date clé de Marc Chagall, en 1911.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "2rdpu1d",
+     "t": "Plafond de l’Opéra Garnier (Marc Chagall)",
+     "d": "1964",
+     "s": "Œuvre ou date clé de Marc Chagall, en 1964.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "2gtvge2",
+     "t": "John Constable (1776-1837)",
+     "d": "1776-1837",
+     "s": "Nationalité : anglais. Peintre paysagiste romantique, rival de Turner. Œuvres : La Charrette de foin, La Cathédrale de Salisbury. Naissance : 11 juin 1776, East Bergholt (Suffolk). Mort : 31 mars 1837, Londres.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "bussngj",
+     "t": "La Charrette de foin (John Constable)",
+     "d": "1821",
+     "s": "Œuvre ou date clé de John Constable, en 1821.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "fcb3f3p",
+     "t": "Lucas Cranach l’Ancien (1472-1553)",
+     "d": "1472-1553",
+     "s": "Nationalité : allemand. Peintre de la Renaissance allemande, ami de Luther dont il fit plusieurs portraits. Œuvres : Portrait d’Henri IV de Saxe et de Catherine de Mecklembourg, Adam et Ève. Naissance : 4 octobre 1472, Kronach (Franconie). Mort : 16 octobre 1553, Weimar.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "5ew879p",
+     "t": "Portrait d’Henri IV de Saxe et de Catherine de Mecklembourg (Lucas Cranach l’Ancien)",
+     "d": "1514",
+     "s": "Œuvre ou date clé de Lucas Cranach l’Ancien, en 1514.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "tiad20d",
+     "t": "Jacques-Louis David (1748-1825)",
+     "d": "1748-1825",
+     "s": "Nationalité : français. Chef de file du néoclassicisme, peintre de la Révolution puis de Napoléon, exilé à Bruxelles. Œuvres : Le Serment des Horaces, La Mort de Marat, Le Sacre de Napoléon. Naissance : 30 août 1748, Paris. Mort : 29 décembre 1825, Bruxelles.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "q2fybci",
+     "t": "Le Serment des Horaces (Jacques-Louis David)",
+     "d": "1784",
+     "s": "Œuvre ou date clé de Jacques-Louis David, en 1784.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "e1d6x6y",
+     "t": "La Mort de Marat (Jacques-Louis David)",
+     "d": "1793",
+     "s": "Œuvre ou date clé de Jacques-Louis David, en 1793.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "aeo75it",
+     "t": "Le Sacre de Napoléon (Jacques-Louis David)",
+     "d": "1807",
+     "s": "Œuvre ou date clé de Jacques-Louis David, en 1807.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "afu6g1o",
+     "t": "Edgar Degas (1834-1917)",
+     "d": "1834-1917",
+     "s": "Nationalité : français. Peintre et sculpteur impressionniste, célèbre pour ses danseuses et ses scènes de courses. Œuvres : La Classe de danse, L’Absinthe, La Petite Danseuse de quatorze ans. Naissance : 19 juillet 1834, Paris. Mort : 27 septembre 1917, Paris.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "w76goiv",
+     "t": "La Classe de danse (Edgar Degas)",
+     "d": "1874",
+     "s": "Œuvre ou date clé de Edgar Degas, en 1874.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "qglzp17",
+     "t": "L’Absinthe (Edgar Degas)",
+     "d": "1876",
+     "s": "Œuvre ou date clé de Edgar Degas, en 1876.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "8axd0js",
+     "t": "Eugène Delacroix (1798-1863)",
+     "d": "1798-1863",
+     "s": "Nationalité : français. Chef de file de la peinture romantique française. Œuvres : La Liberté guidant le peuple, Femmes d’Alger dans leur appartement, Les Massacres de Scio. Naissance : 26 avril 1798, Charenton-Saint-Maurice. Mort : 13 août 1863, Paris.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "myawxso",
+     "t": "La Liberté guidant le peuple (Eugène Delacroix)",
+     "d": "1830",
+     "s": "Œuvre ou date clé de Eugène Delacroix, en 1830.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "f9o32rc",
+     "t": "Femmes d’Alger dans leur appartement (Eugène Delacroix)",
+     "d": "1834",
+     "s": "Œuvre ou date clé de Eugène Delacroix, en 1834.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "kroi0i0",
+     "t": "Marcel Duchamp (1887-1968)",
+     "d": "1887-1968",
+     "s": "Nationalité : français (naturalisé américain). Artiste dada, inventeur du « ready-made ». Œuvres : Fontaine (urinoir signé R. Mutt), Nu descendant un escalier n° 2, L.H.O.O.Q. Naissance : 28 juillet 1887, Blainville-Crevon (Seine-Maritime). Mort : 2 octobre 1968, Neuilly-sur-Seine.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "ezz0qz3",
+     "t": "Nu descendant un escalier n° 2 (Marcel Duchamp)",
+     "d": "1912",
+     "s": "Œuvre ou date clé de Marcel Duchamp, en 1912.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "75oo07j",
+     "t": "Fontaine (Marcel Duchamp)",
+     "d": "1917",
+     "s": "Œuvre ou date clé de Marcel Duchamp, en 1917.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "29kpwf4",
+     "t": "L.H.O.O.Q. (Marcel Duchamp)",
+     "d": "1919",
+     "s": "Œuvre ou date clé de Marcel Duchamp, en 1919.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "ylpk0uk",
+     "t": "Antoine van Dyck (1599-1641)",
+     "d": "1599-1641",
+     "s": "Nationalité : flamand. Élève de Rubens, portraitiste officiel de Charles Ier d’Angleterre. Œuvres : Le Roi à la chasse (Charles Ier), Charles Ier en trois positions. Naissance : 22 mars 1599, Anvers. Mort : 9 décembre 1641, Londres.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "y6apnfz",
+     "t": "Le Roi à la chasse (Antoine van Dyck)",
+     "d": "v. 1635",
+     "s": "Œuvre ou date clé de Antoine van Dyck, en v. 1635.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "yrcu4jz",
+     "t": "Jan van Eyck (v. 1390-1441)",
+     "d": "v. 1390-1441",
+     "s": "Nationalité : flamand. Peintre des « primitifs flamands », réputé pour sa maîtrise de la peinture à l’huile. Œuvres : Les Époux Arnolfini, L’Agneau mystique (avec son frère Hubert). Naissance : v. 1390, Maaseik (Limbourg). Mort : 9 juillet 1441, Bruges.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "aepagaw",
+     "t": "L’Agneau mystique (Jan van Eyck)",
+     "d": "1432",
+     "s": "Œuvre ou date clé de Jan van Eyck, en 1432.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "vzcx3wr",
+     "t": "Les Époux Arnolfini (Jan van Eyck)",
+     "d": "1434",
+     "s": "Œuvre ou date clé de Jan van Eyck, en 1434.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "rerqx7u",
+     "t": "Carel Fabritius (1622-1654)",
+     "d": "1622-1654",
+     "s": "Nationalité : néerlandais. Élève de Rembrandt, maître de Vermeer selon certains. Peu d’œuvres conservées. Œuvre : Le Chardonneret. Naissance : 1622, Middenbeemster. Mort : 12 octobre 1654, Delft (explosion de la poudrière).",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "zn69to6",
+     "t": "Le Chardonneret (Carel Fabritius)",
+     "d": "1654",
+     "s": "Œuvre ou date clé de Carel Fabritius, en 1654.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "4f6j8u3",
+     "t": "Jean-Honoré Fragonard (1732-1806)",
+     "d": "1732-1806",
+     "s": "Nationalité : français. Peintre rococo, élève de Boucher et de Chardin. Œuvres : Les Hasards heureux de l’escarpolette, Le Verrou. Naissance : 5 avril 1732, Grasse. Mort : 22 août 1806, Paris.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "911qrgb",
+     "t": "Les Hasards heureux de l’escarpolette (Jean-Honoré Fragonard)",
+     "d": "1768",
+     "s": "Œuvre ou date clé de Jean-Honoré Fragonard, en 1768.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "24dafux",
+     "t": "Caspar David Friedrich (1774-1840)",
+     "d": "1774-1840",
+     "s": "Nationalité : allemand. Plus grand peintre du romantisme allemand, paysagiste. Œuvres : Le Voyageur contemplant une mer de nuages, Moine au bord de la mer. Naissance : 5 septembre 1774, Greifswald. Mort : 7 mai 1840, Dresde.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "rblp3ew",
+     "t": "Le Voyageur contemplant une mer de nuages (Caspar David Friedrich)",
+     "d": "v. 1818",
+     "s": "Œuvre ou date clé de Caspar David Friedrich, en v. 1818.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "7m8877x",
+     "t": "Thomas Gainsborough (1727-1788)",
+     "d": "1727-1788",
+     "s": "Nationalité : anglais. Portraitiste et paysagiste, rival de Reynolds, fondateur de la Royal Academy. Œuvres : L’Enfant en bleu, M. et Mme Andrews. Naissance : 14 mai 1727 (baptisé), Sudbury (Suffolk). Mort : 2 août 1788, Londres.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "pk4n9bu",
+     "t": "L’Enfant en bleu (Thomas Gainsborough)",
+     "d": "v. 1770",
+     "s": "Œuvre ou date clé de Thomas Gainsborough, en v. 1770.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "abprmys",
+     "t": "Paul Gauguin (1848-1903)",
+     "d": "1848-1903",
+     "s": "Nationalité : français. Peintre post-impressionniste du groupe de Pont-Aven, installé à Tahiti puis aux Marquises. Œuvres : Quand te maries-tu ?, D’où venons-nous ? Que sommes-nous ? Où allons-nous ?, Le Christ jaune. Naissance : 7 juin 1848, Paris. Mort : 8 mai 1903, Atuona (île d’Hiva Oa, Marquises).",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "vvfgjze",
+     "t": "Le Christ jaune (Paul Gauguin)",
+     "d": "1889",
+     "s": "Œuvre ou date clé de Paul Gauguin, en 1889.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "g1e5l7b",
+     "t": "Quand te maries-tu ? (Paul Gauguin)",
+     "d": "1892",
+     "s": "Œuvre ou date clé de Paul Gauguin, en 1892.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "7frothl",
+     "t": "D’où venons-nous ? Que sommes-nous ? Où allons-nous ? (Paul Gauguin)",
+     "d": "1898",
+     "s": "Œuvre ou date clé de Paul Gauguin, en 1898.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "405kakw",
+     "t": "Artemisia Gentileschi (1593-v. 1654)",
+     "d": "1593-v. 1654",
+     "s": "Nationalité : italienne. Peintre baroque caravagesque, première femme admise à l’Académie de dessin de Florence. Œuvre emblématique : Judith décapitant Holopherne. Naissance : 8 juillet 1593, Rome. Mort : v. 1654, Naples.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "qverskk",
+     "t": "Judith décapitant Holopherne (Artemisia Gentileschi)",
+     "d": "1620",
+     "s": "Œuvre ou date clé de Artemisia Gentileschi, en 1620.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "lemcdm9",
+     "t": "Théodore Géricault (1791-1824)",
+     "d": "1791-1824",
+     "s": "Nationalité : français. Peintre romantique mort à 32 ans après une chute de cheval. Œuvres : Le Radeau de la Méduse, Officier de chasseurs à cheval de la garde impériale chargeant. Naissance : 26 septembre 1791, Rouen. Mort : 26 janvier 1824, Paris.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "xbdag63",
+     "t": "Officier de chasseurs à cheval de la garde impériale chargeant (Théodore Géricault)",
+     "d": "1812",
+     "s": "Œuvre ou date clé de Théodore Géricault, en 1812.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "muqyvmw",
+     "t": "Le Radeau de la Méduse (Théodore Géricault)",
+     "d": "1819",
+     "s": "Œuvre ou date clé de Théodore Géricault, en 1819.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "zcc43sb",
+     "t": "Giorgione (v. 1477-1510)",
+     "d": "v. 1477-1510",
+     "s": "Nationalité : italien (Venise). De son vrai nom Giorgio da Castelfranco. Peintre de la Renaissance vénitienne, maître de Titien. Œuvres : La Tempête, La Vénus endormie. Naissance : v. 1477, Castelfranco Veneto. Mort : 1510, Venise (peste).",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "rhvbyho",
+     "t": "La Tempête (Giorgione)",
+     "d": "v. 1508",
+     "s": "Œuvre ou date clé de Giorgione, en v. 1508.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "a6o89h0",
+     "t": "Paul Klee (1879-1940)",
+     "d": "1879-1940",
+     "s": "Nationalité : suisse-allemand. Peintre abstrait, professeur au Bauhaus. Œuvres : Senecio, Fischzauber, Ad Parnassum. Naissance : 18 décembre 1879, Münchenbuchsee (près de Berne). Mort : 29 juin 1940, Muralto (Locarno).",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "pdamixx",
+     "t": "Senecio (Paul Klee)",
+     "d": "1922",
+     "s": "Œuvre ou date clé de Paul Klee, en 1922.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "wgwiq4e",
+     "t": "Judith Leyster (1609-1660)",
+     "d": "1609-1660",
+     "s": "Nationalité : néerlandaise. Peintre du Siècle d’or hollandais, de l’école de Haarlem, proche de Frans Hals, tombée dans l’oubli jusqu’au XIXe siècle. Œuvre : Autoportrait. Naissance : 28 juillet 1609, Haarlem. Mort : 10 février 1660, Heemstede.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "pnlqf8y",
+     "t": "Autoportrait (Judith Leyster)",
+     "d": "v. 1630",
+     "s": "Œuvre ou date clé de Judith Leyster, en v. 1630.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "qji8dy8",
+     "t": "René Magritte (1898-1967)",
+     "d": "1898-1967",
+     "s": "Nationalité : belge. Chef de file du surréalisme belge. Œuvres : La Trahison des images (« Ceci n’est pas une pipe »), Le Fils de l’homme, L’Empire des lumières. Naissance : 21 novembre 1898, Lessines. Mort : 15 août 1967, Bruxelles.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "tvpgery",
+     "t": "La Trahison des images (René Magritte)",
+     "d": "1929",
+     "s": "Œuvre ou date clé de René Magritte, en 1929.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "x85m1ir",
+     "t": "Le Fils de l’homme (René Magritte)",
+     "d": "1964",
+     "s": "Œuvre ou date clé de René Magritte, en 1964.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "dy50euj",
+     "t": "Georgia O’Keeffe (1887-1986)",
+     "d": "1887-1986",
+     "s": "Nationalité : américaine. Peintre moderniste américaine, célèbre pour ses fleurs agrandies et ses paysages du Nouveau-Mexique. Œuvres : Black Iris, Blue and Green Music. Naissance : 15 novembre 1887, Sun Prairie (Wisconsin). Mort : 6 mars 1986, Santa Fe (Nouveau-Mexique).",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "dwupugj",
+     "t": "Blue and Green Music (Georgia O’Keeffe)",
+     "d": "1921",
+     "s": "Œuvre ou date clé de Georgia O’Keeffe, en 1921.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "aoxbsvv",
+     "t": "Black Iris (Georgia O’Keeffe)",
+     "d": "1926",
+     "s": "Œuvre ou date clé de Georgia O’Keeffe, en 1926.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "kmejn5e",
+     "t": "Camille Pissarro (1830-1903)",
+     "d": "1830-1903",
+     "s": "Nationalité : français (né danois). Doyen des impressionnistes, présent aux huit expositions du groupe, maître de Cézanne et de Gauguin. Œuvres : Boulevard Montmartre, matin d’hiver, Les Toits rouges. Naissance : 10 juillet 1830, Charlotte Amalie (Saint-Thomas, îles Vierges). Mort : 13 novembre 1903, Paris.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "htpdtm1",
+     "t": "Boulevard Montmartre, matin d’hiver (Camille Pissarro)",
+     "d": "1897",
+     "s": "Œuvre ou date clé de Camille Pissarro, en 1897.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "tvkia34",
+     "t": "Nicolas Poussin (1594-1665)",
+     "d": "1594-1665",
+     "s": "Nationalité : français. Chef de file de la peinture classique française, installé à Rome. Œuvres : Les Bergers d’Arcadie (« Et in Arcadia ego »), L’Enlèvement des Sabines. Naissance : juin 1594, Les Andelys. Mort : 19 novembre 1665, Rome.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "9dknrhi",
+     "t": "Les Bergers d’Arcadie (Nicolas Poussin)",
+     "d": "v. 1638",
+     "s": "Œuvre ou date clé de Nicolas Poussin, en v. 1638.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "h33zxbv",
+     "t": "Diego Rivera (1886-1957)",
+     "d": "1886-1957",
+     "s": "Nationalité : mexicain. Muraliste, époux de Frida Kahlo. Œuvres : fresques du Palais national de Mexico, fresques du Detroit Institute of Arts. Naissance : 8 décembre 1886, Guanajuato. Mort : 24 novembre 1957, Mexico.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "s5itfkg",
+     "t": "Fresques du Palais national de Mexico (Diego Rivera)",
+     "d": "1929",
+     "s": "Œuvre ou date clé de Diego Rivera, en 1929.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "401wroy",
+     "t": "Zinaïda Serebriakova (1884-1967)",
+     "d": "1884-1967",
+     "s": "Nationalité : russe puis française. Peintre russe émigrée en France en 1924, une des premières femmes de l’art russe moderne. Œuvre : Autoportrait à la toilette (Devant le miroir). Naissance : 10 décembre 1884, Neskoutchnoïé (près de Kharkiv). Mort : 19 septembre 1967, Paris.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "8gwmmno",
+     "t": "Autoportrait à la toilette (Zinaïda Serebriakova)",
+     "d": "1909",
+     "s": "Œuvre ou date clé de Zinaïda Serebriakova, en 1909.",
+     "lv": 1,
+     "ref": ""
+    }
+   ]
+  },
+  {
+   "id": "cel_ecr5",
+   "t": "Écrivains et poètes (5/5)",
+   "c": 2,
+   "f": "cel_ecr",
+   "x": 1440,
+   "y": 3000,
+   "fold": false,
+   "items": [
+    {
+     "id": "rccaepl",
+     "t": "Thomas Mann (1875-1955)",
+     "d": "1875-1955",
+     "s": "Nationalité : allemand. Romancier, prix Nobel de littérature 1929, exilé aux États-Unis sous le nazisme. Œuvres : Les Buddenbrook, La Mort à Venise, La Montagne magique, Le Docteur Faustus. Naissance : 6 juin 1875, Lübeck. Mort : 12 août 1955, Zurich.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "kwui1yw",
+     "t": "Les Buddenbrook (Thomas Mann)",
+     "d": "1901",
+     "s": "Œuvre ou date clé de Thomas Mann, en 1901.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "zq6bxem",
+     "t": "La Mort à Venise (Thomas Mann)",
+     "d": "1912",
+     "s": "Œuvre ou date clé de Thomas Mann, en 1912.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "i7v7n1b",
+     "t": "La Montagne magique (Thomas Mann)",
+     "d": "1924",
+     "s": "Œuvre ou date clé de Thomas Mann, en 1924.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "pyj0xty",
+     "t": "Alessandro Manzoni (1785-1873)",
+     "d": "1785-1873",
+     "s": "Nationalité : italien. Écrivain romantique, auteur du roman historique Les Fiancés (I promessi sposi), considéré comme fondateur du roman italien moderne. Naissance : 7 mars 1785, Milan. Mort : 22 mai 1873, Milan.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "ha9x9d9",
+     "t": "Les Fiancés (Alessandro Manzoni)",
+     "d": "1827",
+     "s": "Œuvre ou date clé de Alessandro Manzoni, en 1827.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "zev9ko8",
+     "t": "Gabriel García Márquez (1927-2014)",
+     "d": "1927-2014",
+     "s": "Nationalité : colombien. Romancier, prix Nobel de littérature 1982, figure du réalisme magique. Œuvres : Cent ans de solitude, L’Amour aux temps du choléra, Chronique d’une mort annoncée. Naissance : 6 mars 1927, Aracataca (Colombie). Mort : 17 avril 2014, Mexico.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "e86yt09",
+     "t": "Cent ans de solitude (Gabriel García Márquez)",
+     "d": "1967",
+     "s": "Œuvre ou date clé de Gabriel García Márquez, en 1967.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "ft6xriu",
+     "t": "Chronique d’une mort annoncée (Gabriel García Márquez)",
+     "d": "1981",
+     "s": "Œuvre ou date clé de Gabriel García Márquez, en 1981.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "oqafqvm",
+     "t": "L’Amour aux temps du choléra (Gabriel García Márquez)",
+     "d": "1985",
+     "s": "Œuvre ou date clé de Gabriel García Márquez, en 1985.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "lw0f3qs",
+     "t": "W. Somerset Maugham (1874-1965)",
+     "d": "1874-1965",
+     "s": "Nationalité : britannique. Romancier et dramaturge, ancien agent secret. Œuvres : Servitude humaine, La Lune et Six Sous, Le Fil du rasoir. Naissance : 25 janvier 1874, Paris (ambassade britannique). Mort : 16 décembre 1965, Nice.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "pkwlv56",
+     "t": "Servitude humaine (W. Somerset Maugham)",
+     "d": "1915",
+     "s": "Œuvre ou date clé de W. Somerset Maugham, en 1915.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "3cqsrnd",
+     "t": "La Lune et Six Sous (W. Somerset Maugham)",
+     "d": "1919",
+     "s": "Œuvre ou date clé de W. Somerset Maugham, en 1919.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "kcwj064",
+     "t": "Le Fil du rasoir (W. Somerset Maugham)",
+     "d": "1944",
+     "s": "Œuvre ou date clé de W. Somerset Maugham, en 1944.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "0webjme",
+     "t": "Guy de Maupassant (1850-1893)",
+     "d": "1850-1893",
+     "s": "Nationalité : français. Maître de la nouvelle réaliste, élève de Flaubert. Œuvres : Boule de suif, Une vie, Bel-Ami, Le Horla. Naissance : 5 août 1850, château de Miromesnil (Tourville-sur-Arques, Seine-Maritime). Mort : 6 juillet 1893, Paris (Passy).",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "xfzlbms",
+     "t": "Boule de suif (Guy de Maupassant)",
+     "d": "1880",
+     "s": "Œuvre ou date clé de Guy de Maupassant, en 1880.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "znsc3k4",
+     "t": "Une vie (Guy de Maupassant)",
+     "d": "1883",
+     "s": "Œuvre ou date clé de Guy de Maupassant, en 1883.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "et2ty6u",
+     "t": "Bel-Ami (Guy de Maupassant)",
+     "d": "1885",
+     "s": "Œuvre ou date clé de Guy de Maupassant, en 1885.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "2kf5oz3",
+     "t": "Le Horla (Guy de Maupassant)",
+     "d": "1887",
+     "s": "Œuvre ou date clé de Guy de Maupassant, en 1887.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "7d6fox7",
+     "t": "John Milton (1608-1674)",
+     "d": "1608-1674",
+     "s": "Nationalité : anglais. Poète, polémiste et secrétaire de Cromwell, devenu aveugle. Œuvre : Le Paradis perdu. Naissance : 9 décembre 1608, Londres. Mort : 8 novembre 1674, Londres.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "0xmow7x",
+     "t": "Le Paradis perdu (John Milton)",
+     "d": "1667",
+     "s": "Œuvre ou date clé de John Milton, en 1667.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "uyz18eu",
+     "t": "Yukio Mishima (1925-1970)",
+     "d": "1925-1970",
+     "s": "Nationalité : japonais. Romancier, dramaturge et ultranationaliste. Œuvres : Confessions d’un masque, Le Pavillon d’or, La Mer de la fertilité. Naissance : 14 janvier 1925, Tokyo. Mort : 25 novembre 1970, Tokyo (seppuku après une tentative de coup d’État).",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "xr6mu78",
+     "t": "Confessions d’un masque (Yukio Mishima)",
+     "d": "1949",
+     "s": "Œuvre ou date clé de Yukio Mishima, en 1949.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "bd9svwe",
+     "t": "Le Pavillon d’or (Yukio Mishima)",
+     "d": "1956",
+     "s": "Œuvre ou date clé de Yukio Mishima, en 1956.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "hkdjo8t",
+     "t": "Margaret Mitchell (1900-1949)",
+     "d": "1900-1949",
+     "s": "Nationalité : américaine. Autrice d’un seul roman : Autant en emporte le vent, prix Pulitzer 1937, adapté au cinéma en 1939. Naissance : 8 novembre 1900, Atlanta (Géorgie). Mort : 16 août 1949, Atlanta (renversée par une voiture).",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "8oq51ig",
+     "t": "Autant en emporte le vent (Margaret Mitchell)",
+     "d": "1936",
+     "s": "Œuvre ou date clé de Margaret Mitchell, en 1936.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "gi0tvt5",
+     "t": "Molière (1622-1673)",
+     "d": "1622-1673",
+     "s": "Nationalité : français. De son vrai nom Jean-Baptiste Poquelin. Dramaturge, comédien et directeur de troupe, protégé de Louis XIV. Œuvres : Tartuffe, Dom Juan, Le Misanthrope, L’Avare, Le Bourgeois gentilhomme, Le Malade imaginaire. Naissance : 15 janvier 1622 (baptisé), Paris. Mort : 17 février 1673, Paris (après une représentation du Malade imaginaire).",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "8hctkyk",
+     "t": "Tartuffe (Molière)",
+     "d": "1664",
+     "s": "Œuvre ou date clé de Molière, en 1664.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "7l1cewt",
+     "t": "Dom Juan (Molière)",
+     "d": "1665",
+     "s": "Œuvre ou date clé de Molière, en 1665.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "mo2lxbw",
+     "t": "Le Misanthrope (Molière)",
+     "d": "1666",
+     "s": "Œuvre ou date clé de Molière, en 1666.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "fph7jd1",
+     "t": "L’Avare (Molière)",
+     "d": "1668",
+     "s": "Œuvre ou date clé de Molière, en 1668.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "1gnzdhu",
+     "t": "Le Bourgeois gentilhomme (Molière)",
+     "d": "1670",
+     "s": "Œuvre ou date clé de Molière, en 1670.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "8xhm5gx",
+     "t": "Le Malade imaginaire (Molière)",
+     "d": "1673",
+     "s": "Œuvre ou date clé de Molière, en 1673.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "bf8rtiu",
+     "t": "Vladimir Nabokov (1899-1977)",
+     "d": "1899-1977",
+     "s": "Nationalité : russe puis américain. Romancier et lépidoptériste. Œuvres : Lolita, Feu pâle, Ada ou l’Ardeur. Naissance : 22 avril 1899, Saint-Pétersbourg. Mort : 2 juillet 1977, Montreux (Suisse).",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "lj19fjn",
+     "t": "Lolita (Vladimir Nabokov)",
+     "d": "1955",
+     "s": "Œuvre ou date clé de Vladimir Nabokov, en 1955.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "5k4tr1u",
+     "t": "Feu pâle (Vladimir Nabokov)",
+     "d": "1962",
+     "s": "Œuvre ou date clé de Vladimir Nabokov, en 1962.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "t0mehzm",
+     "t": "Orhan Pamuk (né en 1952)",
+     "d": "né en 1952",
+     "s": "Nationalité : turc. Romancier, prix Nobel de littérature 2006. Œuvres : Mon nom est Rouge, Neige, Istanbul, Le Musée de l’innocence. Naissance : 7 juin 1952, Istanbul.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "vv6uo5n",
+     "t": "Mon nom est Rouge (Orhan Pamuk)",
+     "d": "1998",
+     "s": "Œuvre ou date clé de Orhan Pamuk, en 1998.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "9mvszf6",
+     "t": "Neige (Orhan Pamuk)",
+     "d": "2002",
+     "s": "Œuvre ou date clé de Orhan Pamuk, en 2002.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "p05f8nb",
+     "t": "Ayn Rand (1905-1982)",
+     "d": "1905-1982",
+     "s": "Nationalité : américaine d’origine russe. Romancière et philosophe, fondatrice de l’objectivisme. Œuvres : La Source vive, La Grève (Atlas Shrugged). Naissance : 2 février 1905, Saint-Pétersbourg. Mort : 6 mars 1982, New York.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "8lgzlcc",
+     "t": "La Source vive (Ayn Rand)",
+     "d": "1943",
+     "s": "Œuvre ou date clé de Ayn Rand, en 1943.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "chime9u",
+     "t": "La Grève (Ayn Rand)",
+     "d": "1957",
+     "s": "Œuvre ou date clé de Ayn Rand, en 1957.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "anv91ut",
+     "t": "Erich Maria Remarque (1898-1970)",
+     "d": "1898-1970",
+     "s": "Nationalité : allemand. Romancier pacifiste, ancien combattant de 14-18, exilé sous le nazisme. Œuvres : À l’Ouest, rien de nouveau, Arc de triomphe. Naissance : 22 juin 1898, Osnabrück. Mort : 25 septembre 1970, Locarno (Suisse).",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "8qo1evm",
+     "t": "À l’Ouest, rien de nouveau (Erich Maria Remarque)",
+     "d": "1929",
+     "s": "Œuvre ou date clé de Erich Maria Remarque, en 1929.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "8i64p2x",
+     "t": "J. K. Rowling (née en 1965)",
+     "d": "née en 1965",
+     "s": "Nationalité : britannique. Autrice de la saga Harry Potter (7 tomes, 1997-2007), une des séries littéraires les plus vendues au monde. Naissance : 31 juillet 1965, Yate (Gloucestershire).",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "m4fc9jw",
+     "t": "Harry Potter à l’école des sorciers (J. K. Rowling)",
+     "d": "1997",
+     "s": "Œuvre ou date clé de J. K. Rowling, en 1997.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "nkk3y02",
+     "t": "J. D. Salinger (1919-2010)",
+     "d": "1919-2010",
+     "s": "Nationalité : américain. Romancier, auteur de L’Attrape-cœurs, devenu reclus. Naissance : 1er janvier 1919, New York. Mort : 27 janvier 2010, Cornish (New Hampshire).",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "woz855i",
+     "t": "L’Attrape-cœurs (J. D. Salinger)",
+     "d": "1951",
+     "s": "Œuvre ou date clé de J. D. Salinger, en 1951.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "jqawyhn",
+     "t": "Friedrich Schiller (1759-1805)",
+     "d": "1759-1805",
+     "s": "Nationalité : allemand. Poète et dramaturge, ami de Goethe, figure du Sturm und Drang puis du classicisme de Weimar. Auteur de l’Ode à la joie, reprise par Beethoven dans sa 9e symphonie. Œuvres : Les Brigands, Guillaume Tell. Naissance : 10 novembre 1759, Marbach am Neckar. Mort : 9 mai 1805, Weimar.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "sdtb08b",
+     "t": "Les Brigands (Friedrich Schiller)",
+     "d": "1781",
+     "s": "Œuvre ou date clé de Friedrich Schiller, en 1781.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "ez0qijp",
+     "t": "Ode à la joie (Friedrich Schiller)",
+     "d": "1785",
+     "s": "Œuvre ou date clé de Friedrich Schiller, en 1785.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "f6s3qee",
+     "t": "Guillaume Tell (Friedrich Schiller)",
+     "d": "1804",
+     "s": "Œuvre ou date clé de Friedrich Schiller, en 1804.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "bn58kjy",
+     "t": "Walter Scott (1771-1832)",
+     "d": "1771-1832",
+     "s": "Nationalité : écossais. Inventeur du roman historique. Œuvres : Waverley, Ivanhoé, Rob Roy. Naissance : 15 août 1771, Édimbourg. Mort : 21 septembre 1832, Abbotsford.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "dmbxfoq",
+     "t": "Waverley (Walter Scott)",
+     "d": "1814",
+     "s": "Œuvre ou date clé de Walter Scott, en 1814.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "w5ch1gh",
+     "t": "Ivanhoé (Walter Scott)",
+     "d": "1819",
+     "s": "Œuvre ou date clé de Walter Scott, en 1819.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "rarq69o",
+     "t": "George Bernard Shaw (1856-1950)",
+     "d": "1856-1950",
+     "s": "Nationalité : irlandais. Dramaturge et critique, prix Nobel de littérature 1925. Œuvre : Pygmalion, qui inspira la comédie musicale My Fair Lady. Naissance : 26 juillet 1856, Dublin. Mort : 2 novembre 1950, Ayot St Lawrence (Hertfordshire).",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "hwgs8qs",
+     "t": "Pygmalion (George Bernard Shaw)",
+     "d": "1913",
+     "s": "Œuvre ou date clé de George Bernard Shaw, en 1913.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "vknsc3h",
+     "t": "Mary Shelley (1797-1851)",
+     "d": "1797-1851",
+     "s": "Nationalité : britannique. Autrice de Frankenstein ou le Prométhée moderne, écrit à 18 ans; épouse du poète Percy Bysshe Shelley, fille de Mary Wollstonecraft. Naissance : 30 août 1797, Londres. Mort : 1er février 1851, Londres.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "y2ifvl0",
+     "t": "Frankenstein (Mary Shelley)",
+     "d": "1818",
+     "s": "Œuvre ou date clé de Mary Shelley, en 1818.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "qtml5u2",
+     "t": "Henryk Sienkiewicz (1846-1916)",
+     "d": "1846-1916",
+     "s": "Nationalité : polonais. Romancier, prix Nobel de littérature 1905. Œuvres : Quo vadis, La Trilogie (Par le fer et par le feu). Naissance : 5 mai 1846, Wola Okrzejska. Mort : 15 novembre 1916, Vevey (Suisse).",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "b83i9gp",
+     "t": "Quo vadis (Henryk Sienkiewicz)",
+     "d": "1896",
+     "s": "Œuvre ou date clé de Henryk Sienkiewicz, en 1896.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "59r03rc",
+     "t": "Sophocle (v. 496-406 av. J.-C.)",
+     "d": "v. 496-406 av. J.-C.",
+     "s": "Nationalité : grec. Un des trois grands tragiques grecs avec Eschyle et Euripide. Œuvres : Antigone, Œdipe roi, Électre. Naissance : v. 496 av. J.-C., Colone (près d’Athènes). Mort : 406 av. J.-C., Athènes.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "xs0ym2d",
+     "t": "Antigone (Sophocle)",
+     "d": "v. 441 av. J.-C.",
+     "s": "Œuvre ou date clé de Sophocle, en v. 441 av. J.-C..",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "zcmefng",
+     "t": "Œdipe roi (Sophocle)",
+     "d": "v. 429 av. J.-C.",
+     "s": "Œuvre ou date clé de Sophocle, en v. 429 av. J.-C..",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "mq99iwd",
+     "t": "John Steinbeck (1902-1968)",
+     "d": "1902-1968",
+     "s": "Nationalité : américain. Romancier, prix Nobel de littérature 1962. Œuvres : Des souris et des hommes, Les Raisins de la colère, À l’est d’Éden. Naissance : 27 février 1902, Salinas (Californie). Mort : 20 décembre 1968, New York.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "ykp7xiq",
+     "t": "Des souris et des hommes (John Steinbeck)",
+     "d": "1937",
+     "s": "Œuvre ou date clé de John Steinbeck, en 1937.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "t8yi0uu",
+     "t": "Les Raisins de la colère (John Steinbeck)",
+     "d": "1939",
+     "s": "Œuvre ou date clé de John Steinbeck, en 1939.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "qxd274p",
+     "t": "À l’est d’Éden (John Steinbeck)",
+     "d": "1952",
+     "s": "Œuvre ou date clé de John Steinbeck, en 1952.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "8xlhtyv",
+     "t": "Stendhal (1783-1842)",
+     "d": "1783-1842",
+     "s": "Nationalité : français. De son vrai nom Marie-Henri Beyle. Romancier, consul de France à Civitavecchia. Œuvres : Le Rouge et le Noir, La Chartreuse de Parme, De l’amour. Naissance : 23 janvier 1783, Grenoble. Mort : 23 mars 1842, Paris.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "h43rcww",
+     "t": "Le Rouge et le Noir (Stendhal)",
+     "d": "1830",
+     "s": "Œuvre ou date clé de Stendhal, en 1830.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "932xv00",
+     "t": "La Chartreuse de Parme (Stendhal)",
+     "d": "1839",
+     "s": "Œuvre ou date clé de Stendhal, en 1839.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "108tcsw",
+     "t": "Robert Louis Stevenson (1850-1894)",
+     "d": "1850-1894",
+     "s": "Nationalité : écossais. Romancier et voyageur. Œuvres : L’Île au trésor, L’Étrange Cas du docteur Jekyll et de M. Hyde, Enlevé !. Naissance : 13 novembre 1850, Édimbourg. Mort : 3 décembre 1894, Vailima (Samoa).",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "26c0y6n",
+     "t": "L’Île au trésor (Robert Louis Stevenson)",
+     "d": "1883",
+     "s": "Œuvre ou date clé de Robert Louis Stevenson, en 1883.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "p37zosz",
+     "t": "L’Étrange Cas du docteur Jekyll et de M. Hyde (Robert Louis Stevenson)",
+     "d": "1886",
+     "s": "Œuvre ou date clé de Robert Louis Stevenson, en 1886.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "a8qshfb",
+     "t": "Harriet Beecher Stowe (1811-1896)",
+     "d": "1811-1896",
+     "s": "Nationalité : américaine. Romancière abolitionniste, auteure de La Case de l’oncle Tom, best-seller qui contribua à attiser le débat sur l’esclavage avant la guerre de Sécession. Naissance : 14 juin 1811, Litchfield (Connecticut). Mort : 1er juillet 1896, Hartford (Connecticut).",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "ckwk2sz",
+     "t": "La Case de l’oncle Tom (Harriet Beecher Stowe)",
+     "d": "1852",
+     "s": "Œuvre ou date clé de Harriet Beecher Stowe, en 1852.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "4tckkq7",
+     "t": "Jonathan Swift (1667-1745)",
+     "d": "1667-1745",
+     "s": "Nationalité : irlandais. Écrivain satirique et doyen de la cathédrale Saint-Patrick. Œuvres : Les Voyages de Gulliver, Modeste proposition. Naissance : 30 novembre 1667, Dublin. Mort : 19 octobre 1745, Dublin.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "20ufkof",
+     "t": "Les Voyages de Gulliver (Jonathan Swift)",
+     "d": "1726",
+     "s": "Œuvre ou date clé de Jonathan Swift, en 1726.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "noso49o",
+     "t": "Modeste proposition (Jonathan Swift)",
+     "d": "1729",
+     "s": "Œuvre ou date clé de Jonathan Swift, en 1729.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "v8hy14b",
+     "t": "William Makepeace Thackeray (1811-1863)",
+     "d": "1811-1863",
+     "s": "Nationalité : britannique. Romancier satirique de l’époque victorienne, rival de Dickens. Œuvre : La Foire aux vanités. Naissance : 18 juillet 1811, Calcutta. Mort : 24 décembre 1863, Londres.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "xn9bxbo",
+     "t": "La Foire aux vanités (William Makepeace Thackeray)",
+     "d": "1848",
+     "s": "Œuvre ou date clé de William Makepeace Thackeray, en 1848.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "v3cjcjl",
+     "t": "Ivan Tourgueniev (1818-1883)",
+     "d": "1818-1883",
+     "s": "Nationalité : russe. Romancier, ami de Flaubert, installé en France. Œuvres : Mémoires d’un chasseur, Premier amour, Pères et fils (popularise le mot « nihiliste »). Naissance : 9 novembre 1818, Orel. Mort : 3 septembre 1883, Bougival (près de Paris).",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "clsx9rw",
+     "t": "Mémoires d’un chasseur (Ivan Tourgueniev)",
+     "d": "1852",
+     "s": "Œuvre ou date clé de Ivan Tourgueniev, en 1852.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "abx4jvj",
+     "t": "Premier amour (Ivan Tourgueniev)",
+     "d": "1860",
+     "s": "Œuvre ou date clé de Ivan Tourgueniev, en 1860.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "bbe8rh0",
+     "t": "Pères et fils (Ivan Tourgueniev)",
+     "d": "1862",
+     "s": "Œuvre ou date clé de Ivan Tourgueniev, en 1862.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "dqbnl95",
+     "t": "Jules Verne (1828-1905)",
+     "d": "1828-1905",
+     "s": "Nationalité : français. Père du roman d’aventures et d’anticipation, créateur des « Voyages extraordinaires ». Œuvres : Cinq semaines en ballon, Voyage au centre de la Terre, Vingt mille lieues sous les mers, Le Tour du monde en quatre-vingts jours. Naissance : 8 février 1828, Nantes. Mort : 24 mars 1905, Amiens.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "43cz71d",
+     "t": "Cinq semaines en ballon (Jules Verne)",
+     "d": "1863",
+     "s": "Œuvre ou date clé de Jules Verne, en 1863.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "9sdf5gv",
+     "t": "Voyage au centre de la Terre (Jules Verne)",
+     "d": "1864",
+     "s": "Œuvre ou date clé de Jules Verne, en 1864.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "ivb6fmw",
+     "t": "Vingt mille lieues sous les mers (Jules Verne)",
+     "d": "1870",
+     "s": "Œuvre ou date clé de Jules Verne, en 1870.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "do80ao1",
+     "t": "Le Tour du monde en quatre-vingts jours (Jules Verne)",
+     "d": "1872",
+     "s": "Œuvre ou date clé de Jules Verne, en 1872.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "wmm5u99",
+     "t": "Virgile (70-19 av. J.-C.)",
+     "d": "70-19 av. J.-C.",
+     "s": "Nationalité : romain. Plus grand poète latin, protégé d’Auguste et de Mécène, guide de Dante dans La Divine Comédie. Œuvres : Les Bucoliques, Les Géorgiques, L’Énéide. Naissance : 15 octobre 70 av. J.-C., Andes (près de Mantoue). Mort : 21 septembre 19 av. J.-C., Brindes.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "m9afxqv",
+     "t": "L’Énéide (Virgile)",
+     "d": "v. 29-19 av. J.-C.",
+     "s": "Œuvre ou date clé de Virgile, en v. 29-19 av. J.-C..",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "iam6y5g",
+     "t": "Kurt Vonnegut (1922-2007)",
+     "d": "1922-2007",
+     "s": "Nationalité : américain. Romancier de science-fiction satirique, survivant du bombardement de Dresde. Œuvres : Abattoir 5, Le Berceau du chat. Naissance : 11 novembre 1922, Indianapolis. Mort : 11 avril 2007, New York.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "4kcjm4u",
+     "t": "Abattoir 5 (Kurt Vonnegut)",
+     "d": "1969",
+     "s": "Œuvre ou date clé de Kurt Vonnegut, en 1969.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "go0s5q4",
+     "t": "H. G. Wells (1866-1946)",
+     "d": "1866-1946",
+     "s": "Nationalité : britannique. Pionnier de la science-fiction. Œuvres : La Machine à explorer le temps, L’Île du docteur Moreau, L’Homme invisible, La Guerre des mondes. Naissance : 21 septembre 1866, Bromley (Kent). Mort : 13 août 1946, Londres.",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "radla6y",
+     "t": "La Machine à explorer le temps (H. G. Wells)",
+     "d": "1895",
+     "s": "Œuvre ou date clé de H. G. Wells, en 1895.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "mzoevj1",
+     "t": "L’Homme invisible (H. G. Wells)",
+     "d": "1897",
+     "s": "Œuvre ou date clé de H. G. Wells, en 1897.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "cb01nv5",
+     "t": "La Guerre des mondes (H. G. Wells)",
+     "d": "1898",
+     "s": "Œuvre ou date clé de H. G. Wells, en 1898.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "frj2bh3",
+     "t": "Walt Whitman (1819-1892)",
+     "d": "1819-1892",
+     "s": "Nationalité : américain. Poète du vers libre. Œuvre majeure : Feuilles d’herbe, remaniée toute sa vie. Naissance : 31 mai 1819, West Hills (Long Island, New York). Mort : 26 mars 1892, Camden (New Jersey).",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "ht4woab",
+     "t": "Feuilles d’herbe (Walt Whitman)",
+     "d": "1855",
+     "s": "Œuvre ou date clé de Walt Whitman, en 1855.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "cq09ytw",
+     "t": "William Butler Yeats (1865-1939)",
+     "d": "1865-1939",
+     "s": "Nationalité : irlandais. Poète et dramaturge, figure de la renaissance littéraire irlandaise, prix Nobel de littérature 1923. Naissance : 13 juin 1865, Sandymount (Dublin). Mort : 28 janvier 1939, Roquebrune-Cap-Martin (France).",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "gmngof5",
+     "t": "Stefan Zweig (1881-1942)",
+     "d": "1881-1942",
+     "s": "Nationalité : autrichien. Écrivain et biographe, exilé du nazisme. Œuvres : La Confusion des sentiments, Le Joueur d’échecs, Le Monde d’hier. Naissance : 28 novembre 1881, Vienne. Mort : 22 février 1942, Petrópolis (Brésil).",
+     "lv": 0,
+     "ref": ""
+    },
+    {
+     "id": "n7z7sxg",
+     "t": "La Confusion des sentiments (Stefan Zweig)",
+     "d": "1927",
+     "s": "Œuvre ou date clé de Stefan Zweig, en 1927.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "ew9woh9",
+     "t": "Le Joueur d’échecs (Stefan Zweig)",
+     "d": "1942",
+     "s": "Œuvre ou date clé de Stefan Zweig, en 1942.",
+     "lv": 1,
+     "ref": ""
+    },
+    {
+     "id": "xfc8dbq",
+     "t": "Le Monde d’hier (Stefan Zweig)",
+     "d": "1942",
+     "s": "Œuvre ou date clé de Stefan Zweig, en 1942.",
+     "lv": 1,
+     "ref": ""
+    }
+   ]
   }
  ],
- "at": 1795135017648,
+ "at": 1795192285137,
  "quiz": {
   "df0ner1|datesinv": {
    "l": 0,
