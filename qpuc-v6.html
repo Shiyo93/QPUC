@@ -2951,7 +2951,7 @@ if (typeof module !== "undefined") module.exports = { sqliteRows: sqliteRows, an
         h += '<div class="answer"><span class="tag">Réponse</span>' + (q.a ? '<span class="a">' + esc(q.a) + "</span>" : "") + (q.ai ? imgTag(q.ai, "pic", "Image de la réponse") : "") + "</div>" +
           '<div class="row"><button class="small bad' + (mk === 0 ? " sel" : "") + '" data-act="m-miss" data-k="' + k + '">Raté</button><button class="small good' + (mk === 1 ? " sel" : "") + '" data-act="m-hit" data-k="' + k + '">Trouvé</button></div>' + rateHtml(q, k);
       } else h += '<button class="small primary" data-act="m-show" data-k="' + k + '">Voir la réponse</button>';
-      h += '<div class="row mtools"><button class="small quiet" data-act="copy" data-s="p" data-w="q" data-k="' + k + '">Copier la question</button>' + (shown ? '<button class="small quiet" data-act="copy" data-s="p" data-w="a" data-k="' + k + '">Copier la réponse</button>' : "") + "</div>";
+      h += '<div class="row mtools"><button class="small quiet" data-act="carte" data-k="' + k + '">＋ Carte</button><button class="small quiet" data-act="copy" data-s="p" data-w="q" data-k="' + k + '">Copier la question</button>' + (shown ? '<button class="small quiet" data-act="copy" data-s="p" data-w="a" data-k="' + k + '">Copier la réponse</button>' : "") + "</div>";
       if (canEdit) h += '<button class="small quiet mfix" data-act="play-edit" data-k="' + k + '">Corriger</button>';
       h += "</div>";
     }
@@ -2983,7 +2983,7 @@ if (typeof module !== "undefined") module.exports = { sqliteRows: sqliteRows, an
     if (S.shown) h += rateHtml(q, 0);
     if (!S.shown) h += '<button class="primary" data-act="reveal">Voir la réponse</button>';
     else h += '<div class="row"><button class="bad" data-act="miss">Raté</button><button class="good" data-act="hit">Trouvé</button></div>';
-    h += '<div class="tools"><button class="quiet small" data-act="dc-play">Copier pour Discord</button><button class="quiet small" data-act="copy" data-s="p" data-w="q" data-k="0">Copier la question</button>' + (S.shown ? '<button class="quiet small" data-act="copy" data-s="p" data-w="a" data-k="0">Copier la réponse</button>' : "") + (S.hist.length ? '<button class="quiet small" data-act="back">← Question précédente</button>' : "") +
+    h += '<div class="tools"><button class="quiet small" data-act="dc-play">Copier pour Discord</button><button class="quiet small" data-act="carte" data-k="0">＋ Carte</button><button class="quiet small" data-act="copy" data-s="p" data-w="q" data-k="0">Copier la question</button>' + (S.shown ? '<button class="quiet small" data-act="copy" data-s="p" data-w="a" data-k="0">Copier la réponse</button>' : "") + (S.hist.length ? '<button class="quiet small" data-act="back">← Question précédente</button>' : "") +
       (findDeck(S.sess ? S.sess.deck : S.deck.id).builtin ? "" : '<button class="quiet small" data-act="play-edit">Corriger cette question</button>') + "</div>";
     h += '<p class="saved">Ta progression est enregistrée à chaque réponse.</p>';
     return h;
@@ -3076,6 +3076,7 @@ if (typeof module !== "undefined") module.exports = { sqliteRows: sqliteRows, an
     else if (act === "ed-del-no") { S.ed.del = false; render(); }
     else if (act === "ed-del-ok") { var rid = S.ed.id; S.ed = null; S.view = "home"; S.msg = { t: "Série supprimée." }; removeDeck(rid); }
     else if (act === "copy") { copySource(b); }
+    else if (act === "carte") { var cq2 = S.queue[S.i + (+b.getAttribute("data-k") || 0)]; if (cq2 && window.carteOpen) window.carteOpen(cq2.q || "", cq2.a || ""); }
     else if (act === "rate") {
       var rq = S.queue[S.i + (+b.getAttribute("data-k"))], rn = +b.getAttribute("data-n");
       if (rq && S.deck) { setRate(S.deck.id, rq, rateOf(S.deck.id, rq) === rn ? null : rn); render(); }
@@ -3198,4 +3199,68 @@ if (typeof module !== "undefined") module.exports = { sqliteRows: sqliteRows, an
 
 </script>
 
+<!-- Pont vers la Carte des savoirs -->
+<script>
+(function(){
+  var GHK='carte-gh',FILE='carte-demandes.json';
+  var css=document.createElement('style');
+  css.textContent='#cm-ov{position:fixed;inset:0;background:rgba(8,12,28,.55);z-index:9999;display:flex;align-items:flex-end;justify-content:center}'
+  +'#cm-sh{background:var(--surface,#fff);color:var(--ink,#101a33);width:100%;max-width:560px;max-height:92vh;overflow:auto;border-radius:18px 18px 0 0;padding:16px 16px 22px;box-sizing:border-box;font-family:inherit}'
+  +'#cm-sh h2{margin:0 0 10px;font-size:1.15rem}#cm-sh label{display:block;font-size:.8rem;color:var(--muted,#5b6783);margin:10px 0 3px;font-weight:600}'
+  +'#cm-sh input,#cm-sh textarea{width:100%;box-sizing:border-box;font:inherit;font-size:1rem;padding:9px 10px;border:1.5px solid var(--line,#cbd3e3);border-radius:10px;background:var(--bg,#eceff5);color:inherit}'
+  +'#cm-sh textarea{min-height:64px;resize:vertical}#cm-sh .cm-q{font-size:.95rem;padding:9px 10px;border-radius:10px;background:var(--tint,#e6ebfa)}#cm-sh .cm-r{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}'
+  +'#cm-sh button{flex:1 1 140px;font:inherit;font-weight:700;padding:11px 12px;border-radius:10px;border:1.5px solid var(--line,#cbd3e3);background:var(--surface,#fff);color:var(--ink,#101a33);cursor:pointer}'
+  +'#cm-sh button.cm-p{background:var(--accent,#2443c4);color:var(--accent-ink,#fff);border-color:transparent}#cm-sh button:disabled{opacity:.5}'
+  +'#cm-sh .cm-m{margin-top:10px;font-size:.9rem;min-height:1.2em}#cm-sh .cm-e{color:var(--bad,#b7371f)}#cm-sh .cm-o{color:var(--good,#17794a)}#cm-sh .cm-h{font-size:.85rem;color:var(--muted,#5b6783);margin:4px 0 0}';
+  document.head.appendChild(css);
+  function cfg(){try{var c=JSON.parse(localStorage.getItem(GHK));return c&&c.token&&c.repo&&c.path?c:null}catch(e){return null}}
+  function url(c){var p=c.path.split('/');p[p.length-1]=FILE;return 'https://api.github.com/repos/'+c.repo+'/contents/'+p.map(encodeURIComponent).join('/')}
+  function hd(c,raw){return {'Authorization':'Bearer '+c.token,'Accept':raw?'application/vnd.github.raw+json':'application/vnd.github+json'}}
+  function b64e(s){var b=new TextEncoder().encode(s),r='';for(var i=0;i<b.length;i+=8192)r+=String.fromCharCode.apply(null,b.subarray(i,i+8192));return btoa(r)}
+  function b64d(s){var r=atob(s.replace(/\s/g,'')),b=new Uint8Array(r.length);for(var i=0;i<r.length;i++)b[i]=r.charCodeAt(i);return new TextDecoder().decode(b)}
+  async function save(c,rec){
+    for(var k=0;k<3;k++){
+      var r=await fetch(url(c),{headers:hd(c),cache:'no-store'}),sha=null,arr=[];
+      if(r.status===404){}else if(!r.ok)throw new Error('GitHub '+r.status);
+      else{var j=await r.json();sha=j.sha;try{arr=JSON.parse(b64d(j.content||''))}catch(e){arr=[]}}
+      if(!Array.isArray(arr))arr=[];
+      arr.push(rec);
+      var body={message:'Demande de fiche depuis QPUC : '+(rec.a||rec.q).slice(0,60),content:b64e(JSON.stringify(arr,null,1))};
+      if(sha)body.sha=sha;
+      var h=hd(c);h['Content-Type']='application/json';
+      var w=await fetch(url(c),{method:'PUT',headers:h,body:JSON.stringify(body)});
+      if(w.ok)return arr.length;
+      if(w.status!==409&&w.status!==422)throw new Error('GitHub '+w.status);
+    }
+    throw new Error('conflit, réessaie');
+  }
+  function close(){var o=document.getElementById('cm-ov');if(o)o.remove()}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  window.carteOpen=function(q,a){
+    close();
+    var ov=document.createElement('div');ov.id='cm-ov';
+    ov.innerHTML='<div id="cm-sh" role="dialog" aria-label="Ajouter à la carte des savoirs"><h2>Ajouter à la carte des savoirs</h2>'
+     +'<div class="cm-q">'+esc(q||'')+'<br><b>→ '+esc(a||'')+'</b></div>'
+     +'<p class="cm-h">La question n’est qu’un prétexte : la fiche complète (définition, exemple, dates, œuvres…) sera rédigée à partir de la réponse.</p>'
+     +'<label for="cm-n">Précision (facultatif)</label><textarea id="cm-n" placeholder="ex. mettre dans Histoire / Politique, ou « c’est une figure de style »"></textarea>'
+     +'<div class="cm-m" id="cm-m"></div>'
+     +'<div class="cm-r"><button class="cm-p" id="cm-a">Ajouter à la carte</button><button class="cm-p" id="cm-b">Carte + frise</button><button id="cm-x">Annuler</button></div></div>';
+    document.body.appendChild(ov);
+    ov.addEventListener('click',function(e){if(e.target===ov)close()});
+    var m=function(t,k){var e=document.getElementById('cm-m');if(e){e.className='cm-m '+(k||'');e.textContent=t}};
+    document.getElementById('cm-x').onclick=close;
+    var c=cfg();
+    if(!c){m('La synchro GitHub n’est pas activée sur cet appareil : ouvre carte.html, touche le nuage et renseigne ton jeton GitHub, puis reviens ici.','cm-e')}
+    function go(frise){
+      if(!c)return;
+      ['cm-a','cm-b'].forEach(function(i){document.getElementById(i).disabled=true});m('Envoi…');
+      var rec={id:Date.now().toString(36),at:new Date().toISOString(),q:q||'',a:a||'',note:document.getElementById('cm-n').value.trim(),frise:!!frise,etat:'a_traiter'};
+      save(c,rec).then(function(n){m('Demande enregistrée ('+n+' en attente). Dis-moi « traite mes ajouts » pour que la fiche soit rédigée.','cm-o');setTimeout(close,2200)},
+        function(e){m('Échec : '+e.message,'cm-e');['cm-a','cm-b'].forEach(function(i){document.getElementById(i).disabled=false})});
+    }
+    document.getElementById('cm-a').onclick=function(){go(false)};
+    document.getElementById('cm-b').onclick=function(){go(true)};
+  };
+})();
+</script>
 </body></html>
