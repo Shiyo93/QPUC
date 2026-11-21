@@ -2582,6 +2582,61 @@ if (typeof module !== "undefined") module.exports = { sqliteRows: sqliteRows, an
       '<p class="lead">Ce code ne donne accès qu\'à tes gists. Il reste dans cet appareil et ne va qu\'à GitHub. Tu peux le révoquer à tout moment sur GitHub.</p></div></details>';
   }
 
+
+  /* ---------- Pont : Carte des savoirs -> séries ---------- */
+  var CARTE = null, CARTE_LS = "carte-savoirs-v1", CSEL = {}, COPEN = false, COPT = { d: true, f: true };
+  function carteData() {
+    if (CARTE) return CARTE;
+    try { var raw = localStorage.getItem(CARTE_LS); if (raw) { var o = JSON.parse(raw); if (o && o.boxes && o.folders) return o; } } catch (e) {}
+    return null;
+  }
+  function carteGroups(c) {
+    var byId = {}; c.folders.forEach(function (f) { byId[f.id] = f; });
+    function path(f) { var p = [], g = f, n = 0; while (g && n++ < 12) { p.unshift(g.t); g = g.p ? byId[g.p] : null; } return p.join(" › "); }
+    var out = {};
+    c.boxes.forEach(function (b) { if (!b.f || !byId[b.f] || !(b.items || []).length) return; (out[b.f] = out[b.f] || { id: b.f, name: path(byId[b.f]), boxes: [] }).boxes.push(b); });
+    return Object.keys(out).map(function (k) { return out[k]; }).sort(function (a, b) { return a.name < b.name ? -1 : 1; });
+  }
+  function carteQs(g, withD, withF) {
+    var qs = [];
+    g.boxes.forEach(function (b) {
+      (b.items || []).forEach(function (it) {
+        var t = String(it.t || "").trim(), clean = t.replace(/\s*\([^()]*\d[^()]*\)\s*$/, "").trim() || t, o = "Carte des savoirs · " + g.name;
+        if (withD && it.d) qs.push({ s: "libre", p: 0, t: b.t || "", q: it.lv ? "Date : " + clean + " ?" : "Quelles sont les dates de " + clean + " ?", a: String(it.d), o: o });
+        if (withF && !it.lv && it.s && String(it.s).length > 40) qs.push({ s: "libre", p: 0, t: b.t || "", q: "Que sait-on de " + clean + " ?", a: String(it.s), o: o });
+      });
+    });
+    return qs;
+  }
+  function cartePanel() {
+    var c = carteData(), h = '<details id="d-carte"' + (COPEN ? " open" : "") + '><summary>Importer depuis la Carte des savoirs</summary><div class="stack">';
+    if (!c) return h + '<p class="lead">La carte n’est pas encore chargée sur cet appareil. Charge sa dernière version publiée.</p><button data-act="carte-load">Charger la carte</button></div></details>';
+    var gs = carteGroups(c);
+    h += '<p class="lead">Un paquet par dossier de la carte. Chaque personne, date ou œuvre devient une question de dates ; chaque fiche devient une question « Que sait-on de… ? ». Réimporter un paquet le met à jour.</p>' +
+      '<label class="row"><input type="checkbox" data-cs="opt-d"' + (COPT.d ? " checked" : "") + '> Questions de dates</label>' +
+      '<label class="row"><input type="checkbox" data-cs="opt-f"' + (COPT.f ? " checked" : "") + '> Questions « fiche »</label>';
+    h += '<div class="list">' + gs.map(function (g) {
+      var n = carteQs(g, COPT.d, COPT.f).length, ex = findDeck("carte-" + g.id);
+      return '<label class="row"><input type="checkbox" data-cs="' + esc(g.id) + '"' + (CSEL[g.id] ? " checked" : "") + '> ' + esc(g.name) + ' · ' + plural(n, "question", "questions") + (ex ? " (déjà importé)" : "") + "</label>";
+    }).join("") + "</div>";
+    return h + '<button class="primary" data-act="carte-imp">Importer la sélection</button><button class="small quiet" data-act="carte-all">Tout cocher</button></div></details>';
+  }
+  function carteImport() {
+    var c = carteData(); if (!c) return;
+    var gs = carteGroups(c).filter(function (g) { return CSEL[g.id]; }), nNew = 0, nUp = 0, nQ = 0;
+    gs.forEach(function (g) {
+      var qs = carteQs(g, COPT.d, COPT.f); if (!qs.length) return;
+      var id = "carte-" + g.id, d = findDeck(id);
+      if (d) { if (JSON.stringify(d.questions) !== JSON.stringify(qs)) { d.questions = qs; d.name = g.name; commitQuestions(d, true); nUp++; } }
+      else { S.decks.push({ id: id, name: g.name, created: Date.now(), questions: qs, synced: false, folder: "Carte des savoirs", mt: 0 }); nNew++; }
+      nQ += qs.length;
+    });
+    sortDecks(); persist(); pushPending();
+    CSEL = {};
+    S.msg = gs.length ? { t: nNew + " paquet" + (nNew > 1 ? "s" : "") + " créé" + (nNew > 1 ? "s" : "") + ", " + nUp + " mis à jour (" + nQ + " questions au total). Ils sont dans le dossier « Carte des savoirs »." } : { t: "Coche au moins un paquet.", err: true };
+    render();
+  }
+
   function viewHome() {
     var h = top() +
       '<h1>Charge ton questionnaire</h1>' +
@@ -2616,6 +2671,7 @@ if (typeof module !== "undefined") module.exports = { sqliteRows: sqliteRows, an
     });
     h += '<details id="d-paste"><summary>Coller du texte</summary><div class="stack"><p class="lead">Une question et sa réponse par ligne (séparées par une tabulation, un point-virgule ou un point d\'interrogation), ou « Question : … » suivie de « Réponse : … ». Tu peux aussi coller directement une partie de sQuiz : tout est nettoyé, la catégorie est gardée, et les questions vont dans la série « sQuiz – (niveau choisi) ».</p>' +
       '<textarea id="paste" rows="6" placeholder="Quelle est la capitale de l\'Italie ? Rome"></textarea>' + sqSelect() + '<button class="primary" data-act="paste">Importer ce texte</button></div></details>';
+    h += cartePanel();
     h += ghPanel();
     h += '<details id="d-backup"><summary>Sauvegarde</summary><div class="stack"><p class="lead">Enregistre tes séries dans un fichier .json, puis charge ce fichier avec le bouton « Choisir des fichiers » sur un autre appareil ou une autre copie de la page.</p>' +
       '<button data-act="export">Sauvegarder mes séries</button></div></details>';
@@ -3117,6 +3173,9 @@ if (typeof module !== "undefined") module.exports = { sqliteRows: sqliteRows, an
     else if (act === "m-miss") { markCard(+b.getAttribute("data-k"), false); }
     else if (act === "m-ok") { validateBatch(); }
     else if (act === "again") { start(S.base.slice(), "list"); }
+    else if (act === "carte-all") { carteGroups(carteData() || { folders: [], boxes: [] }).forEach(function (g) { CSEL[g.id] = true; }); COPEN = true; render(); }
+    else if (act === "carte-imp") { carteImport(); }
+    else if (act === "carte-load") { fetch("carte-savoirs.json", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (o) { CARTE = o; COPEN = true; render(); }, function () { S.msg = { t: "Impossible de charger la carte (hors ligne ?).", err: true }; render(); }); }
     else if (act === "paste") { var t = document.getElementById("paste"); if (t && t.value.trim()) handleText(t.value); }
     else if (act === "export") { exportDecks(); }
     else if (act === "retry") {
@@ -3132,6 +3191,7 @@ if (typeof module !== "undefined") module.exports = { sqliteRows: sqliteRows, an
       var ps = t.getAttribute("data-qimg").split(":"), fl = t.files && t.files[0];
       t.value = ""; if (fl) pickImage(+ps[0], ps[1], fl);
     }
+    else if (t.getAttribute && t.getAttribute("data-cs")) { var csk = t.getAttribute("data-cs"); COPEN = true; if (csk === "opt-d") { COPT.d = t.checked; render(); } else if (csk === "opt-f") { COPT.f = t.checked; render(); } else CSEL[csk] = t.checked; }
     else if (t.id === "au-q") { lsSet(K3 + "aq", String(+t.value || 8)); render(); }
     else if (t.id === "au-a") { lsSet(K3 + "aa", String(+t.value || 5)); render(); }
     else if (t.id === "dc-n") { S.dcN = +t.value || 10; if (S.dc) dcOpen(S.dc.from); }
