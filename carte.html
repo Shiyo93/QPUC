@@ -1159,12 +1159,24 @@ function tlParse(d){
   return {s:Math.min.apply(null,y),e:Math.max.apply(null,y)};
 }
 function tlFmt(y){y=Math.round(y);return y<0?(-y)+' av. J.-C.':String(y)}
+function tlRoot(fid){var n=0;while(fid&&n++<12){var f=S.folders.find(function(x){return x.id===fid});if(!f)return null;if(!f.p)return f;fid=f.p}return null}
+function tlIsCel(fid){var n=0;while(fid&&n++<12){if(fid==='celebres')return true;var f=S.folders.find(function(x){return x.id===fid});fid=f?f.p:''}return false}
+function tlYcat(o,y){
+  if(o.pe){if(o.a===o.b)return o.a===y?'nm':'cur';return(o.a===y||o.b===y)?'nm':'cur'}
+  return(o.a===o.b||o.a===y||o.b===y)?'ev':'cur';
+}
+function tlYlab(o,y){
+  var t=o.t.replace(/\s*\([^()]*\d[^()]*\)\s*$/,'')||o.t;
+  if(o.pe)return o.a===y?'Naissance · '+t:(o.b===y&&o.a<o.b?'Mort · '+t:t);
+  if(o.a!==o.b){if(o.a===y)return 'Début · '+t;if(o.b===y)return 'Fin · '+t}
+  return t;
+}
 function tlItems(scope){
   var out=[];
   qScopeBoxes(scope).forEach(function(b){
     b.items.forEach(function(it,i){
       var r=tlParse(it.d);if(!r||!it.t)return;
-      out.push({t:it.t,d:it.d,s:it.s||'',a:r.s,b:r.e,bid:b.id,bt:b.t,c:b.c,idx:i});
+      out.push({t:it.t,d:it.d,s:it.s||'',a:r.s,b:r.e,bid:b.id,bt:b.t,c:b.c,idx:i,f:b.f,pe:tlIsCel(b.f)&&!it.lv});
     });
   });
   out.sort(function(x,y){return x.a-y.a||y.b-x.b});
@@ -1244,9 +1256,18 @@ function tlRender(first){
     h+='<div class="tlc"><div class="tt2">'+esc(sel.t)+'</div><div class="dd">'+esc(sel.d)+' · '+esc(sel.bt)+'</div>'+(sel.s?'<p>'+esc(sel.s)+'</p>':'')
      +'<div class="row"><span class="ct">'+same+' fiche'+(same>1?'s':'')+' à la même époque (en couleur)</span><button class="sb p" id="tl-o" type="button">Ouvrir la fiche</button></div></div>';
   }else if(ys!==null){
-    var yl=its.map(function(o,i){return {o:o,i:i}}).filter(function(z){return z.o.a<=ys&&z.o.b>=ys});
-    h+='<div class="tlc"><div class="tt2">Année '+tlFmt(ys)+'</div><div class="ct" style="margin:2px 0 4px">'+(yl.length?yl.length+' fiche'+(yl.length>1?'s':'')+' à cette date (touche-en une) :':'Aucune fiche pour cette année.')+'</div><div class="yl">'
-     +yl.slice(0,24).map(function(z){return '<button class="sb" type="button" data-k="'+z.i+'">'+esc(z.o.t)+'</button>'}).join('')+(yl.length>24?'<span class="ct">…</span>':'')+'</div></div>';
+    var all=its.map(function(o,i){return {o:o,i:i}}).filter(function(z){return z.o.a<=ys&&z.o.b>=ys});
+    var cats=[['ev','Événements'],['nm','Naissances et morts'],['cur','Autres (en cours)']];
+    var cnt={ev:0,nm:0,cur:0};all.forEach(function(z){z.c=tlYcat(z.o,ys);cnt[z.c]++});
+    var cat=TL.ycat||'ev';if(!cnt[cat]){var alt=cats.filter(function(c){return cnt[c[0]]})[0];if(alt)cat=alt[0]}
+    var inCat=all.filter(function(z){return z.c===cat});
+    var roots={};inCat.forEach(function(z){var r=tlRoot(z.o.f);if(r){z.r=r.id;roots[r.id]=r.t}});
+    var rk=Object.keys(roots),th=TL.yth&&roots[TL.yth]?TL.yth:'';
+    var yl=th?inCat.filter(function(z){return z.r===th}):inCat;
+    var tabs='<div class="yl" style="margin:2px 0 6px">'+cats.map(function(c){return '<button class="sb'+(c[0]===cat?' p':'')+'" type="button" data-yc="'+c[0]+'">'+c[1]+' ('+cnt[c[0]]+')</button>'}).join('')+'</div>';
+    var ths=rk.length>1?'<div class="yl" style="margin:0 0 6px"><button class="sb'+(!th?' p':'')+'" type="button" data-yt="">Tous les thèmes</button>'+rk.map(function(k){return '<button class="sb'+(th===k?' p':'')+'" type="button" data-yt="'+k+'">'+esc(roots[k])+'</button>'}).join('')+'</div>':'';
+    h+='<div class="tlc"><div class="tt2">Année '+tlFmt(ys)+'</div>'+(all.length?tabs+ths+'<div class="ct" style="margin:2px 0 4px">'+(yl.length?yl.length+' fiche'+(yl.length>1?'s':'')+' (touche-en une) :':'Rien dans cette sélection.')+'</div><div class="yl">'
+     +yl.slice(0,40).map(function(z){return '<button class="sb" type="button" data-k="'+z.i+'">'+esc(tlYlab(z.o,ys))+'</button>'}).join('')+(yl.length>40?'<span class="ct">…</span>':'')+'</div>':'<div class="ct" style="margin:2px 0 4px">Aucune fiche pour cette année.</div>')+'</div>';
   }else h+='<div class="tlc"><div class="ct" style="color:var(--muted);font-size:13px">Touche une fiche, ou une année dans la règle du haut, pour voir ce qui se passait à la même époque.</div></div>';
   el.innerHTML=h;
   bind();
@@ -1266,8 +1287,8 @@ function tlRender(first){
     $('tl-f').onclick=function(){TL.k=null;TL.sx=0;TL.ysel=null;tlRender(true)};
     var yi=$('tl-y'),go=function(){var v=parseInt(yi.value,10);if(isNaN(v))return;tlYear(v,true)};
     $('tl-g').onclick=go;yi.onkeydown=function(e){if(e.key==='Enter'){e.preventDefault();go()}e.stopPropagation()};
-    var yl=document.querySelector('.tlc .yl');
-    if(yl)yl.onclick=function(e){var b=e.target.closest('button[data-k]');if(!b)return;TL.ysel=null;TL.sel=TL.its[+b.dataset.k];tlRender()};
+    var yl=document.querySelector('.tlc');
+    if(yl)yl.onclick=function(e){var c=e.target.closest('button[data-yc]');if(c){TL.ycat=c.dataset.yc;TL.yth='';tlRender();return}var t=e.target.closest('button[data-yt]');if(t){TL.yth=t.dataset.yt;tlRender();return}var b=e.target.closest('button[data-k]');if(!b)return;TL.ysel=null;TL.sel=TL.its[+b.dataset.k];tlRender()};
     if(!s)return;
     s.addEventListener('scroll',function(){TL.sx=s.scrollLeft;TL.sy=s.scrollTop});
     s.onclick=function(e){
