@@ -1834,10 +1834,13 @@ if (typeof module !== "undefined") module.exports = { sqliteRows: sqliteRows, an
     }
     S.hist.push(e); S.i++;
   }
+  // « page suivante » : la question est passée sans être notée (ni trouvée, ni ratée)
+  function applySkip() { S.hist.push({ q: S.queue[S.i], ok: null, skip: true, first: false, ins: -1, off: -1 }); S.i++; }
   function undoAnswer() {
     if (!S.hist.length) return false;
     var e = S.hist.pop();
     S.i--;
+    if (e.skip) return true;
     if (e.ins >= 0) S.queue.splice(e.ins, 1);
     if (!e.ok) {
       var c = (S.missCount.get(e.q) || 1) - 1;
@@ -1851,14 +1854,15 @@ if (typeof module !== "undefined") module.exports = { sqliteRows: sqliteRows, an
     var k = 0;
     for (var j = 0; j < r.length; j++) {
       if (S.i >= S.queue.length) return false;
+      if (r.charAt(j) === "2") { applySkip(); continue; }
       var ok = r.charAt(j) === "1", off;
       if (!ok) { off = xs[k++]; if (off === undefined || isNaN(off)) off = -1; }
       applyAnswer(ok, off);
     }
     return true;
   }
-  function encodeRes() { return S.hist.map(function (e) { return e.ok ? "1" : "0"; }).join(""); }
-  function encodeOffsets() { return S.hist.filter(function (e) { return !e.ok; }).map(function (e) { return e.off; }).join(","); }
+  function encodeRes() { return S.hist.map(function (e) { return e.skip ? "2" : e.ok ? "1" : "0"; }).join(""); }
+  function encodeOffsets() { return S.hist.filter(function (e) { return !e.ok && !e.skip; }).map(function (e) { return e.off; }).join(","); }
   function stat() {
     var found = 0, pts = 0;
     S.hist.forEach(function (e) { if (e.first && e.ok) { found++; pts += e.q.p || 0; } });
@@ -1891,6 +1895,15 @@ if (typeof module !== "undefined") module.exports = { sqliteRows: sqliteRows, an
     marks.forEach(function (m, k) { applyAnswer(m === 1, undefined, (n - 1 - k) + 3); });
     S.bsizes.push(n); resetBatch();
     if (S.i >= S.queue.length) { S.view = "end"; if (S.sess) clearSession(S.sess.deck); }
+    else saveSession();
+    render(); window.scrollTo(0, 0);
+  }
+  function skipPage() {
+    if (!S.sess) return;
+    var n = pageSize(); if (!n) return;
+    for (var k = 0; k < n; k++) { if (S.bm[k] === 0 || S.bm[k] === 1) applyAnswer(S.bm[k] === 1, undefined, (n - 1 - k) + 3); else applySkip(); }
+    S.bsizes.push(n); resetBatch(); S.shown = false;
+    if (S.i >= S.queue.length) { S.view = "end"; clearSession(S.sess.deck); }
     else saveSession();
     render(); window.scrollTo(0, 0);
   }
@@ -2567,7 +2580,7 @@ if (typeof module !== "undefined") module.exports = { sqliteRows: sqliteRows, an
     if (s && s.tot) where += " · partie en cours";
     if (rs0.rated) where += " · note moyenne " + fmtAvg(rs0.avg);
     return '<div class="deck"><div class="info"><div class="name">' + esc(d.name) + '</div><div class="meta">' + d.questions.length + " questions" + where + '</div></div>' +
-      '<button class="small primary" data-act="open" data-id="' + esc(d.id) + '">Jouer</button>' +
+      (s && s.tot ? '<button class="small primary" data-act="resume" data-id="' + esc(d.id) + '">Reprendre</button><button class="small quiet" data-act="open" data-id="' + esc(d.id) + '">Options</button>' : '<button class="small primary" data-act="open" data-id="' + esc(d.id) + '">Jouer</button>') +
       (d.builtin ? "" : '<button class="small quiet" data-act="edit" data-id="' + esc(d.id) + '" aria-label="Modifier la série ' + esc(d.name) + '">Modifier</button>') + "</div>";
   }
 
@@ -3021,7 +3034,7 @@ if (typeof module !== "undefined") module.exports = { sqliteRows: sqliteRows, an
     }
     h += '<div class="stack">' + (allShown ? "" : '<button data-act="m-all">Tout révéler</button>') +
       '<button class="primary" data-act="m-ok"' + (marked === cnt ? "" : " disabled") + ">" + (marked === cnt ? (S.i + cnt >= S.queue.length ? "Terminer" : "Page suivante") : "Note chaque question (" + marked + " / " + cnt + ")") + "</button>" +
-      '<button class="quiet" data-act="dc-play">Copier pour Discord</button>' + (S.hist.length ? '<button class="quiet" data-act="back">← Page précédente</button>' : "") + "</div>" +
+      '<button class="quiet" data-act="dc-play">Copier pour Discord</button>' + (S.i < S.queue.length ? '<button class="quiet" data-act="skip">Page suivante ›</button>' : "") + (S.hist.length ? '<button class="quiet" data-act="back">← Page précédente</button>' : "") + "</div>" +
       '<p class="saved">Tes notes sont enregistrées au fur et à mesure.</p>';
     return h;
   }
@@ -3074,6 +3087,7 @@ if (typeof module !== "undefined") module.exports = { sqliteRows: sqliteRows, an
       h += "</div></details>";
     }
     if (missed.length) h += '<button class="primary" data-act="redo">Rejouer les ' + missed.length + " ratées</button>";
+    if (S.i < S.queue.length - 1) h += '<button class="quiet" data-act="skip">Page suivante ›</button>';
     if (S.hist.length) h += '<button class="quiet" data-act="back">← Revenir à la dernière question</button>';
     h += '<div class="row"><button data-act="again">Nouveau tirage</button><button class="quiet" data-act="home">Autre série</button></div>';
     return h;
@@ -3171,6 +3185,7 @@ if (typeof module !== "undefined") module.exports = { sqliteRows: sqliteRows, an
     else if (act === "go") { startFromSetup(); }
     else if (act === "resume") { resume(id); }
     else if (act === "reveal") { S.shown = true; render(); }
+    else if (act === "skip") { skipPage(); }
     else if (act === "hit") { answer(true); }
     else if (act === "miss") { answer(false); }
     else if (act === "redo") { start(S.missOrder.slice(), "list"); }
