@@ -866,7 +866,7 @@ if (typeof module !== "undefined") module.exports = { parseTlm: parseTlm, parseB
 
 
 /* ---------- Collage depuis sQuiz : « QUESTIONS » puis, pour chaque question, 3 lignes : question / catégorie / réponse ---------- */
-function sqLevel() { var e = document.getElementById("sq-niv"); return (e && e.value) || window.__sqn || "Initié"; }
+function sqLevel() { var e = document.getElementById("sq-niv"); return (e && e.value) || window.__sqn || ""; }
 function sqCat(c) { return c.replace(/\s+/g, " ").trim().replace(/ (Et|Du|De|Des|La|Le|Les|Aux|Au|En|Sur|Sous)(?= )/g, function (m) { return m.toLowerCase(); }); }
 function parseSquiz(text, level) {
   var lines = String(text || "").replace(/\r/g, "").split("\n").map(function (l) { return l.replace(/[  ]/g, " ").trim(); });
@@ -881,10 +881,15 @@ function parseSquiz(text, level) {
   }
   if (body.length < 3) return null;
   var out = [], n = Math.floor(body.length / 3);
+  // la catégorie est la ligne qui revient le plus souvent (peu de catégories, beaucoup de réponses différentes)
+  var f1 = {}, f2 = {}, s1 = 0, s2 = 0;
+  for (i = 0; i < n; i++) { var k1 = body[i * 3 + 1].toLowerCase(), k2 = body[i * 3 + 2].toLowerCase(); f1[k1] = (f1[k1] || 0) + 1; f2[k2] = (f2[k2] || 0) + 1; }
+  for (i = 0; i < n; i++) { s1 += f1[body[i * 3 + 1].toLowerCase()]; s2 += f2[body[i * 3 + 2].toLowerCase()]; }
+  var catSecond = s2 > s1;
   for (i = 0; i < n; i++) {
-    var q = body[i * 3], c = sqCat(body[i * 3 + 1]), a = body[i * 3 + 2];
+    var q = body[i * 3], c = sqCat(body[i * 3 + (catSecond ? 2 : 1)]), a = body[i * 3 + (catSecond ? 1 : 2)];
     if (!q || !a) continue;
-    out.push({ s: "libre", p: 0, t: c, q: q, a: a, o: "sQuiz · " + level });
+    out.push({ s: "libre", p: 0, t: level ? c + " — " + level : c, q: q, a: a, o: "sQuiz · " + level });
   }
   if (!out.length) return null;
   return { questions: out, squiz: true, level: level, rest: body.length % 3, diag: { lines: body.slice(0, 14), count: body.length } };
@@ -1042,7 +1047,7 @@ if (typeof module !== "undefined") module.exports = { sqliteRows: sqliteRows, an
     { key: "k8", label: "Type 8️⃣", hint: "Tout le monde veut prendre sa place" },
     { key: "k9", label: "Type 9️⃣", hint: "Tout le monde veut prendre sa place" }
   ];
-  function sqSelect() { var v = window.__sqn || "Initié"; return '<label class="fld"><span>Niveau des questions sQuiz (si tu colles depuis sQuiz)</span><select id="sq-niv" onchange="window.__sqn=this.value">' + ["Initié", "Confirmé", "Expert"].map(function (n) { return '<option' + (n === v ? " selected" : "") + ">" + n + "</option>"; }).join("") + "</select></label>"; }
+  function sqSelect() { var v = window.__sqn || ""; return '<label class="fld"><span>Niveau des questions sQuiz (à choisir à chaque import depuis sQuiz)</span><select id="sq-niv" onchange="window.__sqn=this.value">' + ["", "Initié", "Confirmé", "Expert"].map(function (n) { return '<option' + (n === v ? " selected" : "") + (n ? "" : ' value=""') + ">" + (n || "— choisis le niveau —") + "</option>"; }).join("") + "</select></label>"; }
   function parseText(t) { var sq = parseSquiz(t, sqLevel()); if (sq) return sq; var tl = parseTlm(t); return tl && tl.questions.length ? tl : parseBlocks(textToBlocks(t)); }
   var K3 = "qpuc-v3-", K2 = "qpuc-entrainement-v2", K1 = "qpuc-entrainement-series-v1";
   var TEXT_EXT = { txt: 1, csv: 1, tsv: 1, md: 1, text: 1, list: 1 };
@@ -2164,13 +2169,14 @@ if (typeof module !== "undefined") module.exports = { sqliteRows: sqliteRows, an
       S.msg = { err: true, t: "Aucune question reconnue dans ce texte. Écris une question et sa réponse par ligne, séparées par une tabulation, un point-virgule ou un point d'interrogation.", d: g.diag.lines };
       render(); return;
     }
+    if (g.squiz && !g.level) { S.msg = { err: true, t: "Choisis d'abord le niveau (Initié, Confirmé ou Expert) dans la liste au-dessus du texte, puis recolle." }; render(); return; }
     if (g.squiz) {
       var dn = "sQuiz – " + g.level, ex = null;
       S.decks.forEach(function (x) { if (!x.builtin && x.name === dn) ex = x; });
       var qs = toQs(g.questions), added;
       if (ex) { var r2 = appendQuestions(ex, qs); added = r2.n; S.notice = (added ? plural(added, "question ajoutée", "questions ajoutées") : "Rien de nouveau") + (r2.dup ? " (" + plural(r2.dup, "doublon ignoré", "doublons ignorés") + ")" : "") + " dans « " + dn + " »."; }
       else { ex = addDeck(dn, qs).deck; S.notice = plural(qs.length, "question importée", "questions importées") + " dans la nouvelle série « " + dn + " »."; }
-      var tb = document.getElementById("paste"); if (tb) tb.value = "";
+      var tb = document.getElementById("paste"); if (tb) tb.value = ""; window.__sqn = "";
       pushPending(); S.msg = { t: S.notice }; openSetup(ex); return;
     }
     var now = new Date();
