@@ -24,6 +24,7 @@ jobs:
           pip install -q yt-dlp faster-whisper
       - name: Traiter les vidéos
         env:
+          FB_COOKIES: ${{ secrets.FB_COOKIES }}
           FORCE: ${{ github.event.inputs.refaire == 'oui' && '1' || '' }}
         run: python tools/transcrire.py
       - name: Enregistrer les résultats

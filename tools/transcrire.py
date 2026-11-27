@@ -33,7 +33,10 @@ for url, label in todo:
     vid = vid_id(url); tmp = tempfile.mkdtemp()
     print("==>", url, vid, flush=True)
     try:
-        r = subprocess.run(["yt-dlp", "-f", "b[height<=480]/b", "--no-playlist", "--no-simulate", "-o", os.path.join(tmp, "v.%(ext)s"),
+        ck = []
+        if os.environ.get("FB_COOKIES") and re.search(r"facebook\.com|fb\.watch", url):
+            cf = os.path.join(tmp, "cookies.txt"); open(cf, "w").write(os.environ["FB_COOKIES"]); ck = ["--cookies", cf]
+        r = subprocess.run(["yt-dlp"] + ck + ["-f", "b[height<=480]/b", "--no-playlist", "--no-simulate", "-o", os.path.join(tmp, "v.%(ext)s"),
                             "--print", "%(title)s|%(duration)s", url], capture_output=True, text=True)
         print(r.stdout, r.stderr[-1500:], flush=True)
         files = glob.glob(os.path.join(tmp, "v.*"))
