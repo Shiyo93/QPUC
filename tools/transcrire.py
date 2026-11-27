@@ -21,7 +21,7 @@ for line in open(os.path.join(ROOT, "videos.txt"), encoding="utf-8"):
     line = line.strip()
     if not line or line.startswith("#"): continue
     url, _, label = line.partition(" ")
-    if vid_id(url) in index and not os.environ.get("FORCE"): continue
+    if "fichier" in index.get(vid_id(url), {}) and not os.environ.get("FORCE"): continue
     todo.append((url, label.strip()))
 if not todo:
     print("Rien de nouveau."); sys.exit(0)
@@ -33,7 +33,7 @@ for url, label in todo:
     vid = vid_id(url); tmp = tempfile.mkdtemp()
     print("==>", url, vid, flush=True)
     try:
-        r = subprocess.run(["yt-dlp", "-f", "b[height<=480]/b", "--no-playlist", "-o", os.path.join(tmp, "v.%(ext)s"),
+        r = subprocess.run(["yt-dlp", "-f", "b[height<=480]/b", "--no-playlist", "--no-simulate", "-o", os.path.join(tmp, "v.%(ext)s"),
                             "--print", "%(title)s|%(duration)s", url], capture_output=True, text=True)
         print(r.stdout, r.stderr[-1500:], flush=True)
         files = glob.glob(os.path.join(tmp, "v.*"))
