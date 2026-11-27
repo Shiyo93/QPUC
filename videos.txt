@@ -1,0 +1,4 @@
+# Une vidéo par ligne : le lien, puis (facultatif) un nom après un espace.
+# Dès que tu enregistres ce fichier, le traitement démarre tout seul (≈ 20 à 40 min par vidéo).
+# Résultat : dossier « transcriptions » (texte avec minutes + texte lu à l'écran).
+https://ok.ru/video/4575063509637 12 coups de midi 8 avril 2023
