@@ -2873,18 +2873,24 @@ if (typeof module !== "undefined") module.exports = { sqliteRows: sqliteRows, an
     var t = String(q.q || "").replace(/\s*\n+\s*/g, " ").trim(), a = String(q.a || "").replace(/\|\|/g, "").replace(/\s*\n+\s*/g, " ").trim();
     if (!t && q.qi) t = "[image à envoyer à part]";
     if (!a && q.ai) a = "[image à envoyer à part]";
-    return t + " ||" + a + "||";
+    var pt = S.dcPts !== false && q.s === "neuf" && q.p ? "[" + q.p + " pt" + (q.p > 1 ? "s" : "") + "] " : "";
+    return pt + t + " ||" + a + "||";
   }
-  function dcChunks(list) {
-    var out = [], cur = "";
+  function dcGroups(list) {
+    var out = [], cur = [], len = 0;
     list.forEach(function (q) {
       var l = dcLine(q);
-      if (cur && cur.length + 1 + l.length > 1900) { out.push(cur); cur = ""; }
-      cur += (cur ? "\n" : "") + l;
+      if (cur.length && len + 1 + l.length > 1900) { out.push(cur); cur = []; len = 0; }
+      cur.push(q); len += (len ? 1 : 0) + l.length;
     });
-    if (cur) out.push(cur);
+    if (cur.length) out.push(cur);
     return out;
   }
+  function dcChunks(list) { return dcGroups(list).map(function (g) { return g.map(dcLine).join("\n"); }); }
+  // questions déjà copiées (mémorisées par série, sur cet appareil)
+  function dcSeen() { var d = S.deck; if (!d) return {}; if (!S.dcSeenM || S.dcSeenM.id !== d.id) { var o = {}; try { o = JSON.parse(lsGet(K3 + "dcs-" + d.id) || "{}") || {}; } catch (e) {} S.dcSeenM = { id: d.id, m: o }; } return S.dcSeenM.m; }
+  function dcMark(qs) { var m = dcSeen(); qs.forEach(function (q) { m[qKey(q)] = 1; }); lsSet(K3 + "dcs-" + S.deck.id, JSON.stringify(m)); }
+  function dcIsDone(q, k) { return !!(S.dc.done[k] || dcSeen()[qKey(q)]); }
   function dcPick(n) {
     var list = setupList();
     return shuffle(list).slice(0, n);
@@ -2893,12 +2899,26 @@ if (typeof module !== "undefined") module.exports = { sqliteRows: sqliteRows, an
     var n = S.dcN || 10, list;
     if (from === "play" && S.sess && (S.sess.m || 1) > 1) n = pageSize() || n;      // mode multi : exactement les questions affichées
     if (from === "play") list = S.queue.slice(S.i, S.i + n).filter(function (q, i, a) { return a.indexOf(q) === i; });
-    else list = dcPick(n);
+    var full = null, page = 0;
+    if (from !== "play") {
+      full = setupList(); if (!full.length) return;
+      var seen = dcSeen(), pages = Math.ceil(full.length / n);
+      page = S.dc && S.dc.from === "setup" && S.dc.keep ? S.dc.page : 0;
+      if (!(S.dc && S.dc.keep)) { for (var pg = 0; pg < pages; pg++) { if (full.slice(pg * n, pg * n + n).some(function (q) { return !seen[qKey(q)]; })) { page = pg; break; } } }
+      page = Math.max(0, Math.min(pages - 1, page));
+      list = full.slice(page * n, page * n + n);
+    }
     if (!list.length) return;
-    S.dc = { from: from, list: list, done: {}, all: false, n: n }; S.view = "discord"; render(); window.scrollTo(0, 0);
+    S.dc = { from: from, list: list, done: {}, all: false, n: n, full: full, page: page }; S.view = "discord"; render(); window.scrollTo(0, 0);
   }
+  function dcGo(p) { if (!S.dc || !S.dc.full) return; S.dc.page = p; S.dc.keep = true; dcOpen("setup"); S.dc.keep = false; }
   function dcCopy(txt, key) {
-    function ok() { if (key === "all") S.dc.all = true; else S.dc.done[key] = true; S.dc.msg = null; render(); }
+    function ok() {
+      if (key === "all") { S.dc.all = true; dcMark(S.dc.list); }
+      else if (typeof key === "string" && key.indexOf("c") === 0) { dcMark(dcGroups(S.dc.list)[+key.slice(1)] || []); }
+      else { S.dc.done[key] = true; dcMark([S.dc.list[key]]); }
+      S.dc.msg = null; render();
+    }
     function legacy() {
       try { var ta = document.createElement("textarea"); ta.value = txt; ta.setAttribute("readonly", ""); ta.style.cssText = "position:fixed;top:0;left:0;opacity:0"; document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0, txt.length); var r = document.execCommand("copy"); ta.remove(); if (r) ok(); else { S.dc.msg = "Copie impossible sur cet appareil."; render(); } } catch (e) { S.dc.msg = "Copie impossible sur cet appareil."; render(); }
     }
@@ -2918,7 +2938,7 @@ if (typeof module !== "undefined") module.exports = { sqliteRows: sqliteRows, an
   }
   function dcNext() {
     var dc = S.dc;
-    for (var k = 0; k < dc.list.length; k++) if (!dc.done[k]) return k;
+    for (var k = 0; k < dc.list.length; k++) if (!dcIsDone(dc.list[k], k)) return k;
     return -1;
   }
   function viewDiscord() {
@@ -2930,11 +2950,13 @@ if (typeof module !== "undefined") module.exports = { sqliteRows: sqliteRows, an
       '<div class="stack">' +
       (nx >= 0 ? '<button class="primary" data-act="dc-next">Copier la question ' + (nx + 1) + " / " + dc.list.length + "</button>" : '<p class="lead"><b>Les ' + dc.list.length + ' questions ont été copiées.</b></p>') +
       (chunks.length === 1 ? '<button data-act="dc-all" data-c="0">' + (dc.all ? "Copié ✓ · " : "") + "Tout copier en un seul message</button>" : chunks.map(function (c, i) { return '<button data-act="dc-all" data-c="' + i + '">Copier le bloc ' + (i + 1) + " / " + chunks.length + " (limite de 2000 caractères)</button>"; }).join("")) +
-      (dc.from === "setup" ? '<button class="quiet" data-act="dc-new">Tirer ' + dc.n + ' autres questions</button>' : "") + "</div>";
+      (dc.full ? '<div class="row"><button class="primary" data-act="dc-page" data-d="1"' + (dc.page + 1 >= Math.ceil(dc.full.length / dc.n) ? " disabled" : "") + '>Page suivante ›</button><button class="quiet" data-act="dc-page" data-d="-1"' + (dc.page ? "" : " disabled") + '>‹ Précédente</button></div>' : "") + "</div>";
+    if (dc.full) { var sn = dcSeen(), cp = dc.full.filter(function (q) { return sn[qKey(q)]; }).length; h += '<p class="lead">Page ' + (dc.page + 1) + " / " + Math.ceil(dc.full.length / dc.n) + " · " + cp + " copiée" + (cp > 1 ? "s" : "") + " sur " + dc.full.length + ' dans cette sélection. <button class="small quiet" data-act="dc-reset">Tout remettre à zéro</button></p>'; }
+    if (dc.list.some(function (q) { return q.s === "neuf" && q.p; })) h += '<label class="chip"><input type="checkbox" id="dc-pts"' + (S.dcPts !== false ? " checked" : "") + '><span class="lbl">Indiquer les points (1, 2 ou 3) dans le texte copié</span></label>';
     h += '<label class="fld"><span>Nombre de questions</span><select id="dc-n">' + [5, 10, 15, 20].map(function (m) { return '<option value="' + m + '"' + (dc.n === m ? " selected" : "") + ">" + m + "</option>"; }).join("") + "</select></label>";
     if (dc.msg) h += '<div class="msg err" role="status"><p>' + esc(dc.msg) + "</p></div>";
     h += '<div class="list">' + dc.list.map(function (q, k) {
-      return '<div class="qrow dc' + (dc.done[k] ? " done" : "") + '"><div class="qt">' + (k + 1) + ". " + esc(dcLine(q)) + '</div><div class="qm"><span>' + (dc.done[k] ? "Copiée ✓" : "") + '</span><button class="small quiet swap" data-act="dc-swap" data-k="' + k + '" aria-label="Changer cette question" title="Changer cette question">' + SWAP_ICON + '</button><button class="small quiet" data-act="dc-one" data-k="' + k + '">' + (dc.done[k] ? "Copier de nouveau" : "Copier") + "</button></div></div>";
+      return '<div class="qrow dc' + (dcIsDone(q, k) ? " done" : "") + '"><div class="qt">' + (dc.full ? dc.page * dc.n + k + 1 : k + 1) + ". " + esc(dcLine(q)) + '</div><div class="qm"><span>' + (dcIsDone(q, k) ? "Copiée ✓" : "") + '</span><button class="small quiet swap" data-act="dc-swap" data-k="' + k + '" aria-label="Changer cette question" title="Changer cette question">' + SWAP_ICON + '</button><button class="small quiet" data-act="dc-one" data-k="' + k + '">' + (dc.done[k] ? "Copier de nouveau" : "Copier") + "</button></div></div>";
     }).join("") + "</div>";
     return h;
   }
@@ -3177,7 +3199,9 @@ if (typeof module !== "undefined") module.exports = { sqliteRows: sqliteRows, an
     else if (act === "dc-swap") { dcSwap(+b.getAttribute("data-k")); }
     else if (act === "dc-one") { var dk = +b.getAttribute("data-k"); dcCopy(dcLine(S.dc.list[dk]), dk); }
     else if (act === "dc-next") { var nk = dcNext(); if (nk >= 0) dcCopy(dcLine(S.dc.list[nk]), nk); }
-    else if (act === "dc-all") { dcCopy(dcChunks(S.dc.list)[+b.getAttribute("data-c") || 0], "all"); }
+    else if (act === "dc-all") { var dci = +b.getAttribute("data-c") || 0; dcCopy(dcChunks(S.dc.list)[dci], dcChunks(S.dc.list).length === 1 ? "all" : "c" + dci); }
+    else if (act === "dc-page") { dcGo(S.dc.page + (+b.getAttribute("data-d"))); }
+    else if (act === "dc-reset") { if (confirm("Remettre toutes les questions de cette série à « pas encore copiées » ?")) { S.dcSeenM = null; lsSet(K3 + "dcs-" + S.deck.id, "{}"); S.dc.done = {}; render(); } }
     else if (act === "dc-new") { dcOpen("setup"); }
     else if (act === "stats") { S.view = "stats"; render(); window.scrollTo(0, 0); }
     else if (act === "stats-back") { openSetup(S.deck); }
@@ -3224,6 +3248,7 @@ if (typeof module !== "undefined") module.exports = { sqliteRows: sqliteRows, an
     else if (t.id === "az-t") { S.az = !!t.checked; render(); }
     else if (t.id === "au-q") { lsSet(K3 + "aq", String(+t.value || 8)); render(); }
     else if (t.id === "au-a") { lsSet(K3 + "aa", String(+t.value || 5)); render(); }
+    else if (t.id === "dc-pts") { S.dcPts = !!t.checked; render(); }
     else if (t.id === "dc-n") { S.dcN = +t.value || 10; if (S.dc) dcOpen(S.dc.from); }
     else if (t.id === "nf-sel") { S.nf = t.value; render(); }
     else if (t.id === "multi-n") { S.multi = +t.value || 1; lsSet(K3 + "multi", String(S.multi)); }
